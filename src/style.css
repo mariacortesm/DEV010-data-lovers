@@ -1,0 +1,38 @@
+body{
+    background-image: radial-gradient(circle, #f2ced5, #ebd0e5, #dad5f2, #c6dbf7, #b6e1f2);
+}
+
+*input[type="search"] {
+ margin: 0px 1000px; /* Establece margen automático en los lados izquierdo y derecho */
+ display: inline-flex; /* Convierte el input en un elemento bloque para aplicar margen auto */
+}
+
+#btonsearch{
+margin-right: 0;
+margin-left: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr; /* Define las filas y sus tamaños */
+    grid-gap: 10px; /* Espacio entre las filas y columnas */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* cinco columnas de igual tamaño */
+    grid-gap: 40px; /* Espacio entre las celdas de la cuadrícula */
+    margin: 100px 200px 100px 200px;
+}
+
+/* Estilos para los elementos dentro de la cuadrícula */
+.grid-item {
+    background-color: #f2ced5;
+    padding: 20px;
+    text-align: center;
+    width: 230px;
+    height: 450px;
+    border: 1px solid black;
+}
+
+footer {
+    text-align: right;
+    font-size: 30px;
+    margin-right: 10px;
+}

@@ -1,13 +1,108 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <button>Haz click para empezar</button>
-    <script src="main.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Studio Ghibli</h1>
+  </header>
+  <div id="root"></div>
+  <div>
+    <input type="search" name="ghiblisearch" list="elementslist" placeholder=Search>
+
+    <button id="btonsearch">Search</button>
+  </div>
+  <h2>Películas</h2>
+  <datalist id="elementslist">
+    <option value="Movies"></option>
+    <option value="Characters"></option>
+    <option value="Director"></option>
+    <option value="Producer"></option>
+    <option value="Vehicles"></option>
+    <option value="Locations"></option>
+  </datalist>
+
+  <div class="grid-container">
+    <div class="grid-item" id="758bf02e-3122-46e0-884e-67cf83df1786"><img
+        src="https://static.wikia.nocookie.net/studio-ghibli/images/5/50/Ponyo_on_the_Cliff_by_the_Sea.jpg"
+        width="200px" height="290px">
+      <h2>Title: Ponyo on the Cliff by the Sea</h2>
+      <p>Director: Hayao Miyazaki <br>Producer: Toshio Suzuki <br>Release date: 2008 <br>Score: 92</p>
+    </div>
+
+    <div class="grid-item" id="2de9426b-914a-4a06-a3a0-5e6d9d3886f6"><img
+        src="https://m.media-amazon.com/images/M/MV5BZDY3ZGI0ZDAtMThlNy00MzAxLTg4YjAtNjkwYTkxNmQ4MjdlXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+        width="200px" height="290px">
+      <h2>Title: The Secret World of Arrietty</h2>
+      <p>Director: Hiromasa Yonebayashi <br>Producer: Toshio Suzuk <br>Release date: 2010 <br>Score: 95</p>
+    </div>
+
+    <div class="grid-item" id="45db04e4-304a-4933-9823-33f389e8d74d"><img
+        src="https://static.wikia.nocookie.net/studio-ghibli/images/b/bb/From_Up_on_Poppy_Hill.jpg" width="200px"
+        height="290px">
+      <h2>Title: From Up on Poppy Hill</h2>
+      <p>Director: Gorō Miyazaki <br>Producer: Toshio Suzuki <br>Release date: 2011 <br>Score: 83</p>
+    </div>
+
+    <div class="grid-item" id="578ae244-7750-4d9f-867b-f3cd3d6fecf4"><img
+        src="https://static.wikia.nocookie.net/studio-ghibli/images/8/87/The_Tale_of_the_Princess_Kaguya.jpg"
+        width="200px" height="290px">
+      <h2>Title: The Tale of the Princess Kaguya</h2>
+      <p>Director: Isao Takahata <br>Producer: Yoshiaki Nishimura <br>Release date: 2013 <br>Score: 100</p>
+    </div>
+
+    <div class="grid-item" id="5fdfb320-2a02-49a7-94ff-5ca418cae602"><img
+        src="https://static.wikia.nocookie.net/studio-ghibli/images/7/7a/When_Marnie_Was_There.jpg" width="200px"
+        height="290px">
+      <h2>Title: When Marnie Was There</h2>
+      <p>Director: Hiromasa Yonebayashi <br>Producer: Yoshiaki Nishimura <br>Release date: 2014 <br>Score: 92</p>
+    </div>
+
+    <div class="grid-item" id="112c1e67-726f-40b1-ac17-6974127bb9b9"><img
+        src="https://static.wikia.nocookie.net/studio-ghibli/images/0/09/%C3%96v%C3%A4rlden.jpg" width="200px"
+        height="290px">
+      <h2>Title: Tales from Earthsea</h2>
+      <p>Director: Gorō Miyazaki <br>Producer: Toshio Suzuki <br>Release date: 2006 <br>Score: 41</p>
+    </div>
+
+    <div class="grid-item" id="cd3d059c-09f4-4ff3-8d63-bc765a5184fa"><img
+        src="https://static.wikia.nocookie.net/studio-ghibli/images/0/08/Howl%27s_Moving_Castle.jpg" width="200px"
+        height="290px">
+      <h2>Title: Howl's Moving Castle</h2>
+      <p>Director: Hayao Miyazaki <br>Producer: Toshio Suzuki <br>Release date: 2004 <br>Score: 87</p>
+    </div>
+
+    <div class="grid-item" id="90b72513-afd4-4570-84de-a56c312fdf81"><img
+        src="https://static.wikia.nocookie.net/studio-ghibli/images/8/87/The_Cat_Returns.jpg" width="200px"
+        height="290px">
+      <h2>Title: The Cat Returns</h2>
+      <p>Director: Hiroyuki Morita <br>Producer: Toshio Suzuki <br>Release date: 2002 <br>Score: 89</p>
+    </div>
+
+    <div class="grid-item" id="dc2e6bd1-8156-4886-adff-b39e6043af0c"><img
+        src="https://static.wikia.nocookie.net/studio-ghibli/images/9/9e/Spirited_Away.png" width="200px"
+        height="290px">
+      <h2>Title: Spirited Away</h2>
+      <p>Director: Hayao Miyazaki <br>Producer: Toshio Suzuki <br>Release date: 2001 <br>Score: 97</p>
+    </div>
+
+    <div class="grid-item" id="45204234-adfd-45cb-a505-a8e7a676b114"><img
+        src="https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbors_the_Yamadas.jpg" width="200px"
+        height="290px">
+      <h2>Title: My Neighbors the Yamadas</h2>
+      <p>Director: Isao Takahata <br>Producer: Toshio Suzuki <br>Release date: 1999 <br>Score: 75</p>
+    </div>
+  </div>
+  <script src="main.js" type="module"></script>
+</body>
+
+<footer>
+  <p>&#169 María Ximena y Alex Olalde</p>
+</footer>
+
 </html>
