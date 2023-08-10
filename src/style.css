@@ -1,5 +1,6 @@
 body{
     background-image: radial-gradient(circle, #f2ced5, #ebd0e5, #dad5f2, #c6dbf7, #b6e1f2);
+    background-size: 1520px 650px;
 }
 
 *input[type="search"] {
