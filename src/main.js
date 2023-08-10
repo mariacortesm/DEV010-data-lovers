@@ -1,6 +1,20 @@
-import { example } from './data.js';
+//import { example } from './data.js';
 // import data from './data/lol/lol.js';
-import data from './data/pokemon/pokemon.js';
+import ghibli from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
-console.log(example, data);
+const dataMovies = document.getElementById("gridmovies")
+for (let gh = 0; gh < ghibli.films.length; gh ++){
+  const sectionMovies = document.createElement('section');
+  sectionMovies.className = 'grid-item';
+  const poster = document.createElement('img');
+  poster.src = ghibli.films[gh].poster;
+  const title = document.createElement('h2');
+  title.innerHTML = ghibli.films[gh].title
+  const info = document.createElement('p');
+  info.innerHTML = `<p> Director: ${ghibli.films[gh].director}<br> Producer: ${ghibli.films[gh].producer}<br> Release date: ${ghibli.films[gh].release_date}<br> Score: ${ghibli.films[gh].rt_score}</p>`;
+  sectionMovies.appendChild(poster);
+  sectionMovies.appendChild(title);
+  sectionMovies.appendChild(info);
+  dataMovies.appendChild(sectionMovies);
+}
