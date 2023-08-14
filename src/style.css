@@ -21,6 +21,10 @@ margin-left: auto;
     grid-gap: 40px; /* Espacio entre las celdas de la cuadrícula */
     margin: 100px 200px 100px 200px;
 }
+.posterM {
+    width: 200px;
+    height: 290px;
+    }
 
 /* Estilos para los elementos dentro de la cuadrícula */
 .grid-item {

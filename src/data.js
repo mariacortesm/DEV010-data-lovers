@@ -1,9 +1,4 @@
 // estas funciones son de ejemplo
-
-export const example = () => {
-  return 'example';
-};
-
-export const anotherExample = () => {
-  return 'OMG';
-};
+export function extraerTitulo(list){
+  return list.map((elemento) => elemento.title).sort();
+}

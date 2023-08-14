@@ -1,5 +1,6 @@
 //import { example } from './data.js';
 // import data from './data/lol/lol.js';
+import { extraerTitulo } from './data.js';
 import ghibli from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
@@ -9,6 +10,7 @@ for (let gh = 0; gh < ghibli.films.length; gh ++){
   sectionMovies.className = 'grid-item';
   const poster = document.createElement('img');
   poster.src = ghibli.films[gh].poster;
+  poster.classList.add('posterM');
   const title = document.createElement('h2');
   title.innerHTML = ghibli.films[gh].title
   const info = document.createElement('p');
@@ -17,4 +19,8 @@ for (let gh = 0; gh < ghibli.films.length; gh ++){
   sectionMovies.appendChild(title);
   sectionMovies.appendChild(info);
   dataMovies.appendChild(sectionMovies);
+
 }
+
+
+console.log("FILTRO",  extraerTitulo(ghibli.films));
