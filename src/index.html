@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -12,38 +13,25 @@
     <h1>Studio Ghibli</h1>
   </header>
   <div id="root"></div>
-  <h2>Películas</h2>
-  <section>
+  <section class="boton-search">
     <input type="search" name="ghiblisearch" list="elementslist" placeholder=Search>
     <button id="btonsearch">Search</button>
-  </div>
-  <h2>Películas</h2>
-  <datalist id="elementslist">
-    <img src: class="posterM">
-    <option value="Movies"></option>
-    <option value="Characters"></option>
-    <option value="Director"></option>
-    <option value="Producer"></option>
-    <option value="Vehicles"></option>
-    <option value="Locations"></option>
-  </datalist>
-  <section class="grid-container" id="gridmovies">
     <datalist id="elementslist">
       <option value="Director"></option>
       <option value="Producer"></option>
-      </datalist>
+    </datalist>
   </section>
-  <section>
-    <label>Ordenar:</label>
-    <button id="ascending-button">A-Z</button>
-    <button id="descending-button">Z-A</button>
-  </section>
-    
-  <section class="grid-container" id="gridmovies"></section>
-  <img src: class="posterM">
 
-    <script src="main.js" type="module"></script>
- 
+  <section class="boton-order">
+    <label>Order movies from:</label>
+    <button id="ascending-button">Aa-Zz</button>
+    <button id="descending-button">Zz-Aa</button>
+  </section>
+
+  <section class="grid-container" id="gridmovies" img src: class="posterM">
+  </section>
+  <script src="main.js" type="module"></script>
+
 </body>
 
 <footer>

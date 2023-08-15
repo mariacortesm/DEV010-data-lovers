@@ -1,11 +1,16 @@
 body{
-    background-image: radial-gradient(circle, #f2ced5, #ebd0e5, #dad5f2, #c6dbf7, #b6e1f2);
-    background-size: 1520px 650px;
+    background-image: linear-gradient(to right, #f2ced5, #ebd0e5, #dad5f2, #c6dbf7, #b6e1f2);
+}
+h1 {
+    text-align: center;
+    font-size: 50px;
+    background-image: linear-gradient(to right, #f2ced5, #f6d5d3, #f6ddd5, #f6e5da, #f5ede1, #f1efe1, #ecf0e3, #e7f2e6, #d9efe4, #caebe7, #bde7ec, #b6e1f2);
 }
 
-*input[type="search"] {
- margin: 0px 1000px; /* Establece margen automático en los lados izquierdo y derecho */
- display: inline-flex; /* Convierte el input en un elemento bloque para aplicar margen auto */
+.boton-search {
+text-align: end;
+margin-right: 70px;
+margin-bottom: 15px;
 }
 
 #btonsearch{
@@ -16,28 +21,43 @@ margin-left: auto;
 .grid-container {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr; /* Define las filas y sus tamaños */
-    grid-gap: 10px; /* Espacio entre las filas y columnas */
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* cinco columnas de igual tamaño */
+    grid-gap: 2px; /* Espacio entre las filas y columnas */
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* cinco columnas de igual tamaño */
     grid-gap: 40px; /* Espacio entre las celdas de la cuadrícula */
-    margin: 100px 200px 100px 200px;
+    margin: 20px 50px 0px 50px;
 }
 .posterM {
     width: 200px;
     height: 290px;
-    }
+}
 
-/* Estilos para los elementos dentro de la cuadrícula */
+.boton-order {
+text-align: end;
+margin-right: 70px;
+font-size: 20px;
+}
+
+#ascending-button{
+    width: 52px;
+    height: 24px
+}
+
+#descending-button{
+    width: 52px;
+    height: 24px
+}
+
 .grid-item {
     background-color: #f2ced5;
     padding: 20px;
     text-align: center;
-    width: 230px;
-    height: 450px;
+    width: 200px;
+    height: 470px;
     border: 1px solid black;
 }
 
 footer {
-    text-align: right;
+    text-align: center;
     font-size: 30px;
     margin-right: 10px;
 }
