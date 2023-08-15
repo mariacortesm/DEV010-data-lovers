@@ -1,7 +1,6 @@
 //import { example } from './data.js';
 // import data from './data/lol/lol.js';
-import { extraerTitulo } from './data.js';
-import ghibli from './data/ghibli/ghibli.js';
+import { extractTitle } from './data.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
 const dataMovies = document.getElementById("gridmovies")
