@@ -12,7 +12,8 @@
     <h1>Studio Ghibli</h1>
   </header>
   <div id="root"></div>
-  <div>
+  <h2>Películas</h2>
+  <section>
     <input type="search" name="ghiblisearch" list="elementslist" placeholder=Search>
     <button id="btonsearch">Search</button>
   </div>
@@ -27,14 +28,21 @@
     <option value="Locations"></option>
   </datalist>
   <section class="grid-container" id="gridmovies">
+    <datalist id="elementslist">
+      <option value="Director"></option>
+      <option value="Producer"></option>
+      </datalist>
   </section>
-  <!--<div>
-    <button id="ascending-button">Sort A-Z</button>
-    <button id="descending-button">Sort Z-A</button>
-  </div>-->
-  
+  <section>
+    <label>Ordenar:</label>
+    <button id="ascending-button">A-Z</button>
+    <button id="descending-button">Z-A</button>
+  </section>
+    
+  <section class="grid-container" id="gridmovies"></section>
+  <img src: class="posterM">
 
-  <script src="main.js" type="module"></script>
+    <script src="main.js" type="module"></script>
  
 </body>
 
