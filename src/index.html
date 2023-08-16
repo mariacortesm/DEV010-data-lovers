@@ -14,16 +14,34 @@
   </header>
   <div id="root"></div>
   <section class="boton-search">
-    <input type="search" name="ghiblisearch" list="elementslist" placeholder=Search>
+    <label>Sort by Director:</label>
+    <select id="director" name="director">
+      <option value="director">Hayao Miyazaki</option>
+      <option value="director">Isao Takahata</option>
+      <option value="director">Yoshifumi Kondō</option>
+      <option value="director">Hiroyuki Morita</option>
+      <option value="director">Gorō Miyazaki</option>
+      <option value="director">Hiromasa Yonebayashi</option>
+    </select>
+    <label>Sort by Producer:</label>
+    <select id="producer" name="producer">
+      <option value="producer">Isao Takahata</option>
+      <option value="producer">Hayao Miyazaki</option>
+      <option value="producer">Toru Hara</option>
+      <option value="producer">Toshio Suzuki</option>
+      <option value="producer">Yoshiaki Nishimura</option>
+    </select>
+  </section>
+    <!-- <input type="search" name="ghiblisearch" list="elementslist" placeholder=Search>
     <button id="btonsearch">Search</button>
     <datalist id="elementslist">
       <option value="Director"></option>
       <option value="Producer"></option>
-    </datalist>
-  </section>
+    </datalist> -->
+  
 
   <section class="boton-order">
-    <label>Order movies from:</label>
+    <label>Sort by:</label>
     <button id="ascending-button">Aa-Zz</button>
     <button id="descending-button">Zz-Aa</button>
   </section>
