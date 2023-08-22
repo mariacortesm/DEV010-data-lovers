@@ -1,9 +1,10 @@
-import { extraerTitulo } from './data.js';
+import { computeLocations, computeVehicle, extractTitle, filterDirector, filterProducer } from './data.js';
 import ghibli from './data/ghibli/ghibli.js';
 
-function pintar(dataghibli) {
+
+function show(dataghibli) {
   const dataMovies = document.getElementById("gridmovies")
-  
+    
   for (let gh = 0; gh < dataghibli.length; gh ++){
     const sectionMovies = document.createElement('section');
     sectionMovies.className = 'grid-item';
@@ -18,26 +19,66 @@ function pintar(dataghibli) {
     sectionMovies.appendChild(title);
     sectionMovies.appendChild(info);
     dataMovies.appendChild(sectionMovies);
-
   }
 }
 
-pintar(ghibli.films)
+show(ghibli.films)
 const ascendingBton = document.getElementById("ascending-button")
 ascendingBton.addEventListener("click", () => {
-  const prueba = extraerTitulo(ghibli.films)
-  console.log("orden", prueba)
+  const rightOrder = extractTitle(ghibli.films)
   document.getElementById("gridmovies").innerHTML = ""
-  pintar(prueba)
-})
-pintar(ghibli.films)
+  show(rightOrder)
+});
+
 const descendingBton = document.getElementById("descending-button")
 descendingBton.addEventListener("click", () => {
-  const pruebaReverse = extraerTitulo(ghibli.films).reverse()
-  console.log("orden", pruebaReverse)
+  const orderReverse = extractTitle(ghibli.films).reverse()
   document.getElementById("gridmovies").innerHTML = ""
-  pintar(pruebaReverse)
-})
+  show(orderReverse)
+});
+
+const openModal =document.querySelector('.bton-facts');
+const modalData = document.querySelector('.modal-funFacts');
+const closeModal = document.querySelector('.modal-close');
+
+openModal.addEventListener('click', (e) => {
+  e.preventDefault(); // evitar que cree un comportamiento por defecto
+  modalData.classList.add('modal-show');
+});
+
+closeModal.addEventListener('click', (e) => {
+  e.preventDefault(); // evitar que cree un comportamiento por defecto
+  modalData.classList.remove('modal-show');
+});
+
+const filterinput = document.getElementById("director");
+filterinput.addEventListener("change", (input) => {
+  const selectedDirector =input.target.value;
+  const filteredFilms = filterDirector(selectedDirector)
+  document.getElementById("gridmovies").innerHTML = ""
+  show(filteredFilms)//por que aqui no es filteredDirector?
+});
+
+const filtersProducer = document.getElementById("producer");
+filtersProducer.addEventListener("change", (input) => {
+  const selectedProducer =input.target.value;
+  const filteredProducer = filterProducer(selectedProducer)
+  document.getElementById("gridmovies").innerHTML = ""
+  show(filteredProducer)
+});
+
+const prueba = document.querySelector("bton-facts");
+console.log("contar", computeVehicle(ghibli.films))
+
+ 
+
+// const filterinput = document.getElementById("director")
+// filterinput.addEventListener("change", (e) => {
+//   const selectedDirector =ghibli.films.find ((obj) => obj.director === e.input.director);
+//   const filteredFilms = filterDirector(selectedDirector)
+//   document.getElementById("gridmovies").innerHTML = ""
+//   pintar(filteredFilms)
+// });
   
 // const orderDesc =extraerTitulo(ghibli.films, "desc");
 // console.log("desc", orderDesc);
