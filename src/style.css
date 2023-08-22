@@ -1,6 +1,8 @@
 body{
     background-image: linear-gradient(to right, #f2ced5, #ebd0e5, #dad5f2, #c6dbf7, #b6e1f2);
+    width: 100vw;
 }
+
 h1 {
     text-align: center;
     font-size: 50px;
@@ -8,14 +10,14 @@ h1 {
 }
 
 .boton-search {
-text-align: end;
-margin-right: 70px;
-margin-bottom: 15px;
+    text-align: end;
+    margin-right: 70px;
+    margin-bottom: 15px;
 }
 
-#btonsearch{
-margin-right: 0;
-margin-left: auto;
+#btonsearch {
+    margin-right: 0;
+    margin-left: auto;
 }
 
 .grid-container {
@@ -26,15 +28,16 @@ margin-left: auto;
     grid-gap: 40px; /* Espacio entre las celdas de la cuadrícula */
     margin: 20px 50px 0px 50px;
 }
+
 .posterM {
     width: 200px;
     height: 290px;
 }
 
 .boton-order {
-text-align: end;
-margin-right: 70px;
-font-size: 20px;
+    text-align: end;
+    margin-right: 70px;
+    font-size: 20px;
 }
 
 #ascending-button{
@@ -54,6 +57,78 @@ font-size: 20px;
     width: 200px;
     height: 470px;
     border: 1px solid black;
+}
+
+.modal-datosCuriosos{
+   position: fixed;  /* para que se fije en la pantalla */
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: #111111bd;
+   display: flex;
+   opacity: 0;
+   pointer-events: none; /* desactivamos cualquier evento del mouse */
+   transition: opacity .6s .9s;
+   --transform:translateY(-100vh);
+   --transition: transform .8s;
+  
+
+}
+
+.modal-show{
+   opacity: 1;
+   pointer-events: unset;
+   transition: opacity .6s; /* primero se pone la opacidad y luego el transform de .8s*/
+   --transform:translateY(0); /*esto es una custom property*/
+   --transition: transform .8s .8s;
+
+}
+
+.modal-container {
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: #f6f6ee;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: var(--transition);
+}
+
+.modal-title {
+    font-size: 2.5rem;
+}
+
+.modal-paragraph {
+    margin-bottom: 10px;
+}
+
+.modal-image{
+    width: 90%;
+    max-width: 300px;
+  
+}
+
+.modal-close{
+    text-decoration: none;
+    color: black;
+    background-color: #e70fb8;
+    padding: 1em 3em;
+    border: 1px solid #09e275;
+    display: inline-block;
+    font-weight: 300; /*para que se vea el texto más delgado */
+    transition: background-color .3s;
+}
+
+.modal-close:hover{
+color: #ee2a2a;
+background-color: #294bf4;
+
 }
 
 footer {
