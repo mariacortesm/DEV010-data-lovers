@@ -183,6 +183,78 @@ p {
   font-weight: bold;
 }
 
+.modal-datosCuriosos{
+   position: fixed;  /* para que se fije en la pantalla */
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: #111111bd;
+   display: flex;
+   opacity: 0;
+   pointer-events: none; /* desactivamos cualquier evento del mouse */
+   transition: opacity .6s .9s;
+   --transform:translateY(-100vh);
+   --transition: transform .8s;
+  
+
+}
+
+.modal-show{
+   opacity: 1;
+   pointer-events: unset;
+   transition: opacity .6s; /* primero se pone la opacidad y luego el transform de .8s*/
+   --transform:translateY(0); /*esto es una custom property*/
+   --transition: transform .8s .8s;
+
+}
+
+.modal-container {
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: #f6f6ee;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: var(--transition);
+}
+
+.modal-title {
+    font-size: 2.5rem;
+}
+
+.modal-paragraph {
+    margin-bottom: 10px;
+}
+
+.modal-image{
+    width: 90%;
+    max-width: 300px;
+  
+}
+
+.modal-close{
+    text-decoration: none;
+    color: black;
+    background-color: #e70fb8;
+    padding: 1em 3em;
+    border: 1px solid #09e275;
+    display: inline-block;
+    font-weight: 300; /*para que se vea el texto más delgado */
+    transition: background-color .3s;
+}
+
+.modal-close:hover{
+color: #ee2a2a;
+background-color: #294bf4;
+
+}
+
 footer {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
