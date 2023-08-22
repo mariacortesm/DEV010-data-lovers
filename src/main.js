@@ -44,6 +44,7 @@ const closeModal = document.querySelector('.modal-close');
 openModal.addEventListener('click', (e) => {
   e.preventDefault(); // evitar que cree un comportamiento por defecto
   modalData.classList.add('modal-show');
+  document.querySelector('.modal-paragraph').innerHTML = `Did you know there are six vehicles (magical or not) in all the twenty movies from Studio Ghibli? <br> ${computeVehicle(ghibli.films)}`;
 });
 
 closeModal.addEventListener('click', (e) => {
@@ -67,7 +68,6 @@ filtersProducer.addEventListener("change", (input) => {
   show(filteredProducer)
 });
 
-const prueba = document.querySelector("bton-facts");
 console.log("contar", computeVehicle(ghibli.films))
 
  

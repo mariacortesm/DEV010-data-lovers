@@ -21,15 +21,14 @@ export function filterProducer(producer) {
 }
 
 export function computeVehicle (list) {
-  const marc = list.flatMap((item) => item.vehicles.map((vehicle) => vehicle.name));
-  const maria = marc.length;
-  return maria
-     
+  return list.flatMap((item) => item.vehicles.map((vehicle) => vehicle.name));
 } 
 
 export function computeLocations (list) {
   return list.flatMap((item) => item.locations.map((location) => location.name));
 } 
+
+
 
 
 
