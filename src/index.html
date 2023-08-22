@@ -13,17 +13,44 @@
     <h1>Studio Ghibli</h1>
   </header>
   <div id="root"></div>
+  <section class="modal-datosCuriosos">
+    <div class="modal-container">
+      <img src="https://caracol.com.co/resizer/M5oSmpxZip5PgWh5ja1v4ET28rg=/1080x625/filters:quality(70)/cloudfront-us-east-1.images.arcpublishing.com/prisaradioco/D2UDD5IGNZLXRKGQ4RAFQDCHUQ.jpg" class="modal-image">
+      <h3 class="modal-title">Welcome to fun facts!</h3>
+      <p class="modal-paragraph">Info de datos cuoriosos con la función de cálculo</p>
+      <a href="#" class="modal-close">Close</a>
+
+    </div>
+  </section>
+  <button class="bton-facts">Click here for some fun facts!</button>
   <section class="boton-search">
-    <input type="search" name="ghiblisearch" list="elementslist" placeholder=Search>
+    <label>Sort by Director:</label>
+<select id="director" name="director">
+    <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+    <option value="Isao Takahata">Isao Takahata</option>
+    <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+    <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+    <option value="Gorō Miyazaki">Gorō Miyazaki</option>
+    <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+</select>
+<label>Sort by Producer:</label>
+<select id="producer" name="producer">
+    <option value="Isao Takahata">Isao Takahata</option>
+    <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+    <option value="Toru Hara">Toru Hara</option>
+    <option value="Toshio Suzuki">Toshio Suzuki</option>
+    <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>
+</select>
+    <!-- <input type="search" name="ghiblisearch" list="elementslist" placeholder=Search>
     <button id="btonsearch">Search</button>
     <datalist id="elementslist">
       <option value="Director"></option>
       <option value="Producer"></option>
-    </datalist>
+    </datalist> -->
   </section>
 
   <section class="boton-order">
-    <label>Order movies from:</label>
+    <label>Sort by:</label>
     <button id="ascending-button">Aa-Zz</button>
     <button id="descending-button">Zz-Aa</button>
   </section>
