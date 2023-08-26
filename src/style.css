@@ -21,14 +21,29 @@ select {
     border-color: #f2ced5;
 }
 
-.bton-facts {
-    background: #f6f6ee;
+section-facts {
+    margin-top: 1%;
+}
+
+.label-fun {
     font-family: 'Quicksand', sans-serif;
+    font-size: medium;
     font-weight: bold;
-    font-size: large;
+    position: absolute;
+    margin-left: 117px;
+}
+
+.bton-facts {
+    background: #f2ced5;
     border-color: #f2ced5;
-    margin-top: 3%;
-    margin-left: 7%;
+    margin-top: 2%;
+    margin-left: 8%;
+    margin-bottom: auto;
+    width: 90px;
+    height: 90px;
+    background-image: url("https://i.pinimg.com/originals/4d/ec/91/4dec91e1d71b99b8c17afd7f0d3a9e0c.gif");
+    background-size: cover;
+    border-radius: 50%;
 }
 
 .modal-funFacts {
@@ -60,7 +75,7 @@ select {
     max-width: 600px;
     max-height: 90%;
     background-color: #f6f6ee;
-    padding: 3em 2.5em;
+    padding: 2em 2.5em;
     display: grid;
     gap: 1em;
     place-items: center;
@@ -69,19 +84,32 @@ select {
     transition: var(--transition);
 }
 
+.modal-image {
+    content: '';
+    background-image: url('https://64.media.tumblr.com/c9564ee97c25b638f5fa9181066ce3fd/432711763f8e02ba-d4/s540x810/3d398ef95d0b89ade6feb65f2e018ff5cb59c053.gifv');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 17%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;   
+}
+
 .modal-title {
     font-family: 'Quicksand', sans-serif;
     font-size: 2.5rem;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .modal-paragraph {
     font-family: 'Quicksand', sans-serif;
     margin-bottom: 10px;
-}
-
-.modal-image {
-    width: 90%;
-    max-width: 300px;  
+    margin-top: auto;
+    text-align: center;
 }
 
 .modal-close {
@@ -90,9 +118,9 @@ select {
     text-decoration: none;
     color: black;
     background-color: #f2ced5;
+    border-color: #f6f6ee;
     padding: 1em 3em;
     display: inline-block;
-    
     transition: background-color .3s;
 }
 
@@ -104,11 +132,11 @@ select {
 
 .button-search {
     font-family: 'Quicksand', sans-serif;
-    text-align: end;
+    text-align: right;
     font-size: large;
     font-weight: bold;
-    margin-right: 70px;
-    margin-bottom: 15px;
+    margin-right: 3%;
+    margin-bottom: 2%;
 }
 
 #btonsearch {
@@ -118,10 +146,10 @@ select {
 
 .button-order {
     font-family: 'Quicksand', sans-serif;
-    text-align: end;
-    margin-right: 70px;
+    text-align: right;
     font-size: large;
     font-weight: bold;
+    margin-right: 3%;
 }
 
 #ascending-button {
@@ -145,22 +173,13 @@ select {
 .grid-container {
     display: grid;
     background-size: cover;
-    width: 100%;
+    width: 89%;
     grid-template-rows: repeat(auto-fill, minmax(240px, 1fr)); /* Cambio: Usar repeat para las filas */
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    /*grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Cambio: Reducir a dos columnas */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));/* Cambio: Reducir a dos columnas */
     grid-gap: 30px; /* Cambio: Espacio entre las celdas */
-    margin: 20px 20px 0px 100px; /* Cambio: Ajustar márgenes */
+    /*margin: 20px 0px 0px 50px; /* Cambio: Ajustar márgenes */
+    margin: 2% 1% 5% 7%;
 }
-
-
-    /*grid-template-rows: 1fr 1fr 1fr 1fr 1fr; /* Define las filas y sus tamaños */
-    
-    /*grid-gap: 2px; /* Espacio entre las filas y columnas */
-    /*grid-template-columns: 1fr 1fr 1fr 1fr; /* cinco columnas de igual tamaño */
-    /*grid-gap: 40px; /* Espacio entre las celdas de la cuadrícula */
-    /*margin: 20px 50px 0px 50px;
-    grid-area: ;*/
 
 .grid-item {
     background-color: #f2ced5;
@@ -191,3 +210,9 @@ footer {
     margin-right: 10px;
 }
 
+    /*grid-template-rows: 1fr 1fr 1fr 1fr 1fr; /* Define las filas y sus tamaños */
+    /*grid-gap: 2px; /* Espacio entre las filas y columnas */
+    /*grid-template-columns: 1fr 1fr 1fr 1fr; /* cinco columnas de igual tamaño */
+    /*grid-gap: 40px; /* Espacio entre las celdas de la cuadrícula */
+    /*margin: 20px 50px 0px 50px;
+    grid-area: ;*/
