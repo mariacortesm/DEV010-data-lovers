@@ -173,7 +173,7 @@ section-facts {
 .grid-container {
     display: grid;
     background-size: cover;
-    width: 89%;
+    /*width: 89%;*/
     grid-template-rows: repeat(auto-fill, minmax(240px, 1fr)); /* Cambio: Usar repeat para las filas */
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));/* Cambio: Reducir a dos columnas */
     grid-gap: 30px; /* Cambio: Espacio entre las celdas */
