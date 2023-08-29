@@ -75,7 +75,9 @@ filtersProducer.addEventListener("change", (input) => {
 
 document.querySelector(
   ".modal-paragraph"
+
 ).innerHTML = `Did you know that there are six vehicles (whether magical or not) featured in Studio Ghibli films?" ${computeVehicle(
+
   ghibli.films
 )} <br><br> Did you know the percentage of female characters (includes humans and other species) featured in Studio Ghibli films is: ${computeFemaleCharacterPercentage(
   ghibli.films
@@ -83,4 +85,6 @@ document.querySelector(
   2
 )} % <br><br> While the percentage of male characters (includes humans and other species) is: ${computeMaleCharacterPercentage(
   ghibli.films
+
 ).toFixed(2)} %`;
+

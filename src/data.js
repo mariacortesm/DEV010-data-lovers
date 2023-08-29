@@ -6,11 +6,13 @@ export function extractTitle(list) { //La función se llama "extractTitle" y tom
   return list.sort(function (a, b) { //Se usa el método "sort()" en la lista para ordenar sus elementos. Este m'etodo toma una función como argumento, que decide cómo se deben ordenar los elementos. La función dentro de sort() compara dos elementos, "a" y "b", basándose en sus títulos.
     if (a.title > b.title) { //Si el título de "a" es mayor que el título de "b", devuelve 1, lo que indica que "a" debería ir después de "b" en la ordenación.
 
+
       return 1;
     }
     if (a.title < b.title) {//Si el título de "a" es menor que el título de "b", devuelve -1, lo que indica que "a" debería ir antes de "b" en la ordenación.
       return -1;
     }
+
 
     return 0;//Si los títulos son iguales, devuelve 0, lo que significa que no importa el orden entre a y b.
   }); //Al final la función retorna la lista ordenada según las reglas establecidas en la función de comparación.
@@ -19,8 +21,10 @@ export function extractTitle(list) { //La función se llama "extractTitle" y tom
 //Funci'on pura para filtrar por Director y Productor. 
 export function filterDirector(director) {//La funci'on "filterDirector" toma como par'ametro "director". {} es el cuerpo de la función, donde se describe lo que la función hace.
   return ghibli.films.filter((film) => film.director === director);
+
 }
 //Se usa el m'etodo "filter()"" en la propiedad "films" del objeto "ghibli" (que contiene info sobre las pel'iculas de SG). "filter()" crea una nueva lista de películas que cumplan con cierta condición. Dentro de "filter()"", hay una arrow function que se ejecutará por cada película en la lista de películas. Esta función toma una película "(film)" como entrada y verifica si el director de esa película coincide con el valor pasado como argumento a la función "filterDirector". La comparación "(film.director === director)"" verifica si el director de la película actual es igual al director proporcionado como argumento a la función "filterDirector". La función "filter()" devolverá una nueva lista que contiene solo las películas cuyos directores coincidan con el "director" proporcionado.
+
 
 export function filterProducer(producer) {//Es la misma funci'on que filterDirector
   return ghibli.films.filter((film) => film.producer === producer);
@@ -63,13 +67,15 @@ export function computeMaleCharacterPercentage(films) {//Es lo mismo que female
 
 }
 
+
 export function filterDirector(director) {
-  return ghibli.films.filter((film)=> film.director === director);
+  return ghibli.films.filter((film) => film.director === director);
 }
 
 export function filterProducer(producer) {
-  return ghibli.films.filter((film)=> film.producer === producer);
+  return ghibli.films.filter((film) => film.producer === producer);
 }
+
 
 export function computeteVehicle (list) {
   return list.flatMap((item) => item.vehicles.map((vehicle) => vehicle.name));   
@@ -80,6 +86,21 @@ export function computeLocations (list) {
 } 
 
 
+export function computeFemaleCharacterPercentage(films) {
+  let totalFemaleCharacters = 0;
+  let totalCharacters = 0;
+  for (const film of films) {
+    for (const character of film.people) {
+      if (character.gender === "Female") {
+        totalFemaleCharacters++;
+      }
+      totalCharacters++;
+    }
+  }
+  const percentage = (totalFemaleCharacters / totalCharacters) * 100;
+  return percentage;
+}
+
 //   const order = list.map((elemento) => elemento.title);
 //   if (sortOrder === "asc") {
 //     order.sort();
@@ -87,6 +108,7 @@ export function computeLocations (list) {
 //   } else if (sortOrder === "desc"); {
 //     order.sort((a, b) => b.localeCompare(a));
 //   }
+
 
 // return order;
 
