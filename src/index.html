@@ -3,62 +3,76 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
   <header>
-    <h1>Studio Ghibli</h1>
+    <img src="imágenes/logo Ghibli.png" alt="Studio Ghibli logo">
   </header>
   <div id="root"></div>
-  <section class="modal-datosCuriosos">
+  <section class="modal-funFacts">
     <div class="modal-container">
-      <img src="https://caracol.com.co/resizer/M5oSmpxZip5PgWh5ja1v4ET28rg=/1080x625/filters:quality(70)/cloudfront-us-east-1.images.arcpublishing.com/prisaradioco/D2UDD5IGNZLXRKGQ4RAFQDCHUQ.jpg" class="modal-image">
-      <h3 class="modal-title">Welcome to fun facts!</h3>
-      <p class="modal-paragraph">Info de datos cuoriosos con la función de cálculo</p>
-      <a href="#" class="modal-close">Close</a>
-
+      <img class="modal-image">
+      <h1 class="modal-title">Welcome to fun facts!</h1>
+      <p class="modal-paragraph"></p>
+      <button class="modal-close">Close</button>
     </div>
   </section>
-  <button class="bton-facts">Click here for some fun facts!</button>
-  <section class="boton-search">
-    <label>Sort by Director:</label>
-<select id="director" name="director">
-    <option value="Hayao Miyazaki">Hayao Miyazaki</option>
-    <option value="Isao Takahata">Isao Takahata</option>
-    <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
-    <option value="Hiroyuki Morita">Hiroyuki Morita</option>
-    <option value="Gorō Miyazaki">Gorō Miyazaki</option>
-    <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
-</select>
-<label>Sort by Producer:</label>
-<select id="producer" name="producer">
-    <option value="Isao Takahata">Isao Takahata</option>
-    <option value="Hayao Miyazaki">Hayao Miyazaki</option>
-    <option value="Toru Hara">Toru Hara</option>
-    <option value="Toshio Suzuki">Toshio Suzuki</option>
-    <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>
-</select>
-    <!-- <input type="search" name="ghiblisearch" list="elementslist" placeholder=Search>
-    <button id="btonsearch">Search</button>
-    <datalist id="elementslist">
-      <option value="Director"></option>
-      <option value="Producer"></option>
-    </datalist> -->
-  </section>
+  <section class="section-facts">
+  <label class="label-fun">Click me!</label>
+  <button class="bton-facts" id="female-percent-button"></button>
+</section>
+  <section class="button-search">
+    <label>Search by Director:</label>
+    <select id="director" name="director">
+      <option value="Select a Director">Select a Director</option>
+      <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+      <option value="Isao Takahata">Isao Takahata</option>
+      <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+      <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+      <option value="Gorō Miyazaki">Gorō Miyazaki</option>
+      <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+    </select>
+    <label>Search by Producer:</label>
+    <select id="producer" name="producer">
+      <option value="Select a Producer">Select a Producer</option>
+      <option value="Isao Takahata">Isao Takahata</option>
+      <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+      <option value="Toru Hara">Toru Hara</option>
+      <option value="Toshio Suzuki">Toshio Suzuki</option>
+      <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>
+      </select>
+    </section>
 
-  <section class="boton-order">
-    <label>Sort by:</label>
+  <section class="button-order">
+    <label>Sort Movies by:</label>
     <button id="ascending-button">Aa-Zz</button>
     <button id="descending-button">Zz-Aa</button>
   </section>
 
-  <section class="grid-container" id="gridmovies" img src: class="posterM">
+  <section class="grid-container" id="gridmovies">
   </section>
-  <script src="main.js" type="module"></script>
+  <section class="modal-poster">
+    <div class="modal-infoMovies">
+      <img class="modal-pic">
+      <h1 class="modal-movieTitle"></h1>
+      <p class="modal-movieDescription"> </p>
+      <p class="modal-movieDate"> </p>
+      <p class="modal-rating"></p>
+      <p class="modal-people"></p>
+      <button class="modal-movieClose">X</button>
+      
+    </div>
+  </section>
 
+  <script src="main.js" type="module"></script>
 </body>
 
 <footer>
@@ -66,3 +80,9 @@
 </footer>
 
 </html>
+    <!-- <input type="search" name="ghiblisearch" list="elementslist" placeholder=Search>
+    <button id="btonsearch">Search</button>
+    <datalist id="elementslist">
+      <option value="Director"></option>
+      <option value="Producer"></option>
+    </datalist> -->

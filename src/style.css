@@ -1,138 +1,274 @@
 body{
-    background-image: linear-gradient(to right, #f2ced5, #ebd0e5, #dad5f2, #c6dbf7, #b6e1f2);
-    width: 100vw;
+  background: linear-gradient(to right, #f2ced5, #ebd0e5, #dad5f2, #c6dbf7, #b6e1f2);
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-    text-align: center;
-    font-size: 50px;
-    background-image: linear-gradient(to right, #f2ced5, #f6d5d3, #f6ddd5, #f6e5da, #f5ede1, #f1efe1, #ecf0e3, #e7f2e6, #d9efe4, #caebe7, #bde7ec, #b6e1f2);
+header img {
+  width: 40%;
+  display: block;
+  margin: 0 auto;
 }
 
-.boton-search {
-    text-align: end;
-    margin-right: 70px;
-    margin-bottom: 15px;
+select {
+  font-family: 'Quicksand', sans-serif;
+  font-size: medium;
+  font-weight: bold;
+  background: #f6f6ee;
+  border-color: #f2ced5;
 }
 
-#btonsearch {
-    margin-right: 0;
-    margin-left: auto;
+.section-facts{
+  display: block;
+  margin-top: 1%;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr; /* Define las filas y sus tamaños */
-    grid-gap: 2px; /* Espacio entre las filas y columnas */
-    grid-template-columns: 1fr 1fr 1fr 1fr; /* cinco columnas de igual tamaño */
-    grid-gap: 40px; /* Espacio entre las celdas de la cuadrícula */
-    margin: 20px 50px 0px 50px;
+.label-fun{
+  font-family: 'Quicksand', sans-serif;
+  font-size: medium;
+  font-weight: bold;
+  position:absolute;
+  margin-left: 112px;
 }
 
-.posterM {
-    width: 200px;
-    height: 290px;
+.bton-facts {
+  background: #f2ced5;
+  border-color: #f2ced5;
+  margin-top: 2%;
+  margin-left: 8%;
+  width: 90px;
+  height: 90px;
+  background-image: url("https://i.pinimg.com/originals/4d/ec/91/4dec91e1d71b99b8c17afd7f0d3a9e0c.gif");
+  background-size: cover;
+  border-radius: 50%;
 }
 
-.boton-order {
-    text-align: end;
-    margin-right: 70px;
-    font-size: 20px;
+.modal-funFacts {
+  position: fixed; /* para que se fije en la pantalla */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none; /* desactivamos cualquier evento del mouse */
+  transition: opacity .6s .9s;
+  --transform: translateY(-100vh);
+  --transition: transform .8s;
 }
 
-#ascending-button{
-    width: 52px;
-    height: 24px
-}
-
-#descending-button{
-    width: 52px;
-    height: 24px
-}
-
-.grid-item {
-    background-color: #f2ced5;
-    padding: 20px;
-    text-align: center;
-    width: 200px;
-    height: 470px;
-    border: 1px solid black;
-}
-
-.modal-datosCuriosos{
-   position: fixed;  /* para que se fije en la pantalla */
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   background-color: #111111bd;
-   display: flex;
-   opacity: 0;
-   pointer-events: none; /* desactivamos cualquier evento del mouse */
-   transition: opacity .6s .9s;
-   --transform:translateY(-100vh);
-   --transition: transform .8s;
-  
-
-}
-
-.modal-show{
-   opacity: 1;
-   pointer-events: unset;
-   transition: opacity .6s; /* primero se pone la opacidad y luego el transform de .8s*/
-   --transform:translateY(0); /*esto es una custom property*/
-   --transition: transform .8s .8s;
-
+.modal-show {
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity .6s; /* primero se pone la opacidad y luego el transform de .8s*/
+  --transform: translateY(0); /*esto es una custom property*/
+  --transition: transform .8s .8s;
 }
 
 .modal-container {
-    margin: auto;
-    width: 90%;
-    max-width: 600px;
-    max-height: 90%;
-    background-color: #f6f6ee;
-    padding: 3em 2.5em;
-    display: grid;
-    gap: 1em;
-    place-items: center;
-    grid-auto-columns: 100%;
-    transform: var(--transform);
-    transition: var(--transition);
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90%;
+  background-color: #f6f6ee;
+  padding: 2em 2.5em;
+  display: grid;
+  gap: 1em;
+  place-items: center;
+  grid-auto-columns: 100%;
+  transform: var(--transform);
+  transition: var(--transition);
+}
+
+ .modal-image {
+    content: '';
+    background-image: url('https://64.media.tumblr.com/c9564ee97c25b638f5fa9181066ce3fd/432711763f8e02ba-d4/s540x810/3d398ef95d0b89ade6feb65f2e018ff5cb59c053.gifv');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 17%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;   
 }
 
 .modal-title {
-    font-size: 2.5rem;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .modal-paragraph {
-    margin-bottom: 10px;
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 10px;
+  margin-top: auto;
+  text-align: center;
 }
 
-.modal-image{
-    width: 90%;
-    max-width: 300px;
-  
+.modal-close {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  border-color: #f6f6ee;
+  background-color: #F2CED5;
+  padding: 1em 3em;
+  display: inline-block;
+  transition: background-color .3s;
 }
 
-.modal-close{
-    text-decoration: none;
-    color: black;
-    background-color: #e70fb8;
-    padding: 1em 3em;
-    border: 1px solid #09e275;
-    display: inline-block;
-    font-weight: 300; /*para que se vea el texto más delgado */
-    transition: background-color .3s;
+.modal-close:hover {
+  color: black;
+  font-weight: bold;
+  background-color: #b6e1f2;
 }
 
-.modal-close:hover{
-color: #ee2a2a;
-background-color: #294bf4;
-
+.button-search {
+  font-family: 'Quicksand', sans-serif;
+  text-align: end;
+  font-size: large;
+  font-weight: bold;
+  margin-right: 70px;
+  margin-bottom: 15px;
 }
+
+#btonsearch {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.button-order {
+  font-family: 'Quicksand', sans-serif;
+  text-align: end;
+  margin-right: 70px;
+  font-size: large;
+  font-weight: bold;
+}
+
+#ascending-button {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  background: #f6f6ee;
+  border-color: #f2ced5;
+  width: 55px;
+  height: 24px
+}
+
+#descending-button {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  background: #f6f6ee;
+  border-color: #f2ced5;
+  width: 55px;
+  height: 24px
+}
+
+.grid-container {
+  display: grid;
+  background-size: cover;
+  width: 100%;
+  grid-template-rows: repeat(auto-fill, minmax(240px, 1fr)); /* Cambio: Usar repeat para las filas */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));  /* Cambio: Reducir a dos columnas */
+  grid-gap: 30px; /* Cambio: Espacio entre las celdas */
+  margin: 20px 20px 0px 100px; /* Cambio: Ajustar márgenes */
+}
+
+.grid-item {
+  background-color: #f2ced5;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  height: 320px;
+  border: 1px solid black;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 70%;
+}
+
+.posterM {
+  width: 130px;
+  height: 190px;
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 110%;
+  font-weight: bold;
+}
+
+.modal-poster {
+  position: fixed; /* para que se fije en la pantalla */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-movieShow{
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.modal-infoMovies{
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90%;
+  background-color: #f6f6ee;
+  padding: 3em 2.5em;
+  display: grid;
+  gap: 1em;
+  place-items: center;
+  grid-template-columns: 100%;
+}
+
+.modal-movieTitle {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2.5rem;
+}
+
+.modal-movieParagraph{
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 10px;
+}
+
+.modal-movieClose {
+  text-decoration: none;
+  color: #f6f6ee;
+  background-color: #f26250;
+  padding: 1em 3em ;
+  border: 1px solid #f6f6ee;
+  display: inline-block;
+  font-weight: 300;
+  transition: background-color .3s;
+}
+
+.modal-movieClose:hover{
+  color: #f26250;
+  background-color: #f6f6ee;
+}
+
 
 footer {
-    text-align: center;
-    font-size: 30px;
-    margin-right: 10px;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  font-size: 20px;
+  margin-right: 10px;
 }
+
+  /*grid-template-rows: 1fr 1fr 1fr 1fr 1fr; /* Define las filas y sus tamaños */
+  /*grid-gap: 2px; /* Espacio entre las filas y columnas */
+  /*grid-template-columns: 1fr 1fr 1fr 1fr; /* cinco columnas de igual tamaño */
+  /*grid-gap: 40px; /* Espacio entre las celdas de la cuadrícula */
+  /*margin: 20px 50px 0px 50px;
+  grid-area: ;*/
