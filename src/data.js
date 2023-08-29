@@ -1,14 +1,17 @@
+
 import ghibli from "./data/ghibli/ghibli.js"; //se importa la data del proyecto de Studio Ghibli
 
 //Funci'on para ordenar las pel'iculas en orden alfab'etico. Export significa que la función puede ser utilizada en otros lugares del código.
 export function extractTitle(list) { //La función se llama "extractTitle" y toma un parámetro llamado "list" (la lista de t'itulos de las pel'iculas)
   return list.sort(function (a, b) { //Se usa el método "sort()" en la lista para ordenar sus elementos. Este m'etodo toma una función como argumento, que decide cómo se deben ordenar los elementos. La función dentro de sort() compara dos elementos, "a" y "b", basándose en sus títulos.
     if (a.title > b.title) { //Si el título de "a" es mayor que el título de "b", devuelve 1, lo que indica que "a" debería ir después de "b" en la ordenación.
+
       return 1;
     }
     if (a.title < b.title) {//Si el título de "a" es menor que el título de "b", devuelve -1, lo que indica que "a" debería ir antes de "b" en la ordenación.
       return -1;
     }
+
     return 0;//Si los títulos son iguales, devuelve 0, lo que significa que no importa el orden entre a y b.
   }); //Al final la función retorna la lista ordenada según las reglas establecidas en la función de comparación.
 }
@@ -57,7 +60,25 @@ export function computeMaleCharacterPercentage(films) {//Es lo mismo que female
   }
   const percentage = (totalMaleCharacters / maleCharacter) * 100;
   return percentage;
+
 }
+
+export function filterDirector(director) {
+  return ghibli.films.filter((film)=> film.director === director);
+}
+
+export function filterProducer(producer) {
+  return ghibli.films.filter((film)=> film.producer === producer);
+}
+
+export function computeteVehicle (list) {
+  return list.flatMap((item) => item.vehicles.map((vehicle) => vehicle.name));   
+} 
+
+export function computeLocations (list) {
+  return list.flatMap((item) => item.locations.map((location) => location.name));
+} 
+
 
 //   const order = list.map((elemento) => elemento.title);
 //   if (sortOrder === "asc") {
@@ -66,4 +87,6 @@ export function computeMaleCharacterPercentage(films) {//Es lo mismo que female
 //   } else if (sortOrder === "desc"); {
 //     order.sort((a, b) => b.localeCompare(a));
 //   }
+
 // return order;
+
