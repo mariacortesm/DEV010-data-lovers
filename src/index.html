@@ -3,10 +3,13 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- asegura que el sitio web sea responsive, ajustando el contenido al ancho del dispositivo y evitando un zoom excesivo al cargar la página. "viewport" indica la configuración de la ventana de visualización.-->
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Quicksand es nuestra fuente para todo el proyecto-->
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 
@@ -14,22 +17,29 @@
 
 <body>
   <header>
-    <img src="imágenes/logo Ghibli.png" alt="Studio Ghibli logo">
+
+
+    <img src="Images/Studio-Ghibli-logo.png" alt="Studio Ghibli logo"> <!--Este el logo de Studio Ghibli de la interfaz-->
   </header>
   <div id="root"></div>
-  <section class="modal-funFacts">
+  <section class="modal-funFacts">  <!--esta sección es la del botón con imagen que abre el modal box de los Fun Facts-->
     <div class="modal-container">
       <img class="modal-image">
       <h1 class="modal-title">Welcome to fun facts!</h1>
-      <p class="modal-paragraph"></p>
+      <p class="modal-paragraph"></p> <!--Esta es la info dentro del modal box de fun facts-->
+
       <button class="modal-close">Close</button>
     </div>
+  </section> 
+  
+  <section class="section-facts"> <!--Esta sección es para insertar el gif en el botón y el texto Click me!-->
+    <label class="label-fun">Click me for some fun facts!</label>
+    <button class="bton-facts" id="female-percent-button"></button> <!--se puso "female-percent-button" porque al principio solo mostr'abamos el c'alculo de los personajes femeninos, despu'es se agreg'o el de los masculinos-->
   </section>
-  <section class="section-facts">
-  <label class="label-fun">Click me!</label>
-  <button class="bton-facts" id="female-percent-button"></button>
-</section>
-  <section class="button-search">
+
+
+  <section class="button-search"> <!--Esta sección que integra un label y un option es para la función de filtrar por Director y Productor-->
+
     <label>Search by Director:</label>
     <select id="director" name="director">
       <option value="Select a Director">Select a Director</option>
@@ -48,39 +58,36 @@
       <option value="Toru Hara">Toru Hara</option>
       <option value="Toshio Suzuki">Toshio Suzuki</option>
       <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>
-      </select>
-    </section>
 
-  <section class="button-order">
+    </select>
+  </section>
+
+  <section class="button-order"> <!--Esta sección incluye los botones de ordenar por orden alfabético-->
+
+
     <label>Sort Movies by:</label>
     <button id="ascending-button">Aa-Zz</button>
     <button id="descending-button">Zz-Aa</button>
   </section>
 
-  <section class="grid-container" id="gridmovies">
-  </section>
-  <section class="modal-poster">
-    <div class="modal-infoMovies">
-      <img class="modal-pic">
-      <h1 class="modal-movieTitle"></h1>
-      <p class="modal-movieDescription"> </p>
-      <p class="modal-movieDate"> </p>
-      <p class="modal-rating"></p>
-      <p class="modal-people"></p>
-      <button class="modal-movieClose">X</button>
-      
-    </div>
+
+  <section class="grid-container" id="gridmovies"> <!--Esta sección está relacionada con el display grid que contiene los posters e info de las películas-->
   </section>
 
-  <script src="main.js" type="module"></script>
-</body>
+  <script src="main.js" type="module"></script> 
+</body> 
+
 
 <footer>
   <p>&#169 María Ximena y Alex Olalde</p>
 </footer>
-
 </html>
-    <!-- <input type="search" name="ghiblisearch" list="elementslist" placeholder=Search>
+
+
+
+
+<!-- <input type="search" name="ghiblisearch" list="elementslist" placeholder=Search>
+
     <button id="btonsearch">Search</button>
     <datalist id="elementslist">
       <option value="Director"></option>
