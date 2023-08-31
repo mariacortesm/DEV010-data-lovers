@@ -118,7 +118,7 @@ for(let i =0; i < openMovieModal.length; i++) {
       textoImagen.textContent = `Name: ${people.name}, Gender: ${people.gender}, Age: ${people.age}, Eye Color: ${people.eye_color}, Hair Color ${people.hair_color}, Specie: ${people.specie}`
       imagen.src = people.img; 
       imagesDiv.appendChild(imagen);
-      imagesDiv.appendChild(textoImagen)});
+      imagesDiv.appendChild(textoImagen)}); 
   });
 }
 
@@ -126,6 +126,7 @@ closeMovieModal.addEventListener("click", (m) => {
   m.preventDefault(); // evitar que cree un comportamiento por defecto
   modalMovieData.classList.remove("modal-movieShow");
 });
+
 
 
 // function movieShow(dataghibli) {

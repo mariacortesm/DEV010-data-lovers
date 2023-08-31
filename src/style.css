@@ -63,6 +63,7 @@ select {
     bottom: 0;
     background-color: #111111bd;/*Establece un color de fondo semitransparente (negro con opacidad) para oscurecer el fondo detrás del modal.*/
     display: flex;
+    text-align: center;
     opacity: 0;
     pointer-events: none; /*Desactivamos cualquier evento del mouse, lo que significa que los elementos debajo del modal podrán recibir eventos de clic u otros eventos del mouse.*/
     transition: opacity .6s .9s;/*Define una transición suave para la opacidad del modal. La opacidad tarda 0.6 segundos en cambiar y comienza 0.9 segundos después de que se haya activado la transición*/
