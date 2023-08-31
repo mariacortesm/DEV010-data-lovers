@@ -1,4 +1,4 @@
-import { filterDirector, filterProducer, extractTitle, computeVehicle, computeFemaleCharacterPercentage } from '../src/data.js'; //se borra lo que va dentro de las llaves
+import { filterDirector, filterProducer, extractTitle, computeVehicle, computeFemaleCharacterPercentage } from '../src/data.js';
 
 describe('filterDirector', () => {
   it('is a function', () => {
@@ -27,7 +27,7 @@ describe('computeVehicle', () => {
     expect(typeof computeVehicle).toBe('function');
   });
 
-  it('Deberia retornar vehiculos', () => {
+  it('Debería retornar vehículos', () => {
     const vehicles = [{
       "id": "90b72513-afd4-4570-84de-a56c312fdf81",
       "title": "The Cat Returns",
@@ -794,13 +794,13 @@ it('Deberia retornar el porcentaje de personajes femeninos', () => {
   expect(computeFemaleCharacterPercentage(femaleCharacters)).toBe(40.74074074074074);
 });
 
-describe('extractTitle', () => { //esta es la estructura basica de los test
+describe('extractTitle', () => {
   it('is a function', () => {
     expect(typeof extractTitle).toBe('function');
   });
 });
 
-it('Deberia ordenar de la A a la Z', () => {
+it('Debería ordenar de la A a la Z', () => {
   const title = [
     {
       "id": "112c1e67-726f-40b1-ac17-6974127bb9b9",
