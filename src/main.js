@@ -99,26 +99,66 @@ document.querySelector(
 const openMovieModal = document.querySelectorAll(".grid-item ");
 const modalMovieData = document.querySelector(".modal-poster");
 const closeMovieModal = document.querySelector(".modal-movieClose");
-for(let i =0; i < openMovieModal.length; i++) {
+for (let i = 0; i < openMovieModal.length; i++) {
   openMovieModal[i].addEventListener("click", (m) => {
     m.preventDefault(); //Evitar que cree un comportamiento por defecto
     modalMovieData.classList.add("modal-movieShow");
-    const pruebaS = ghibli.films.find(film => film.title === openMovieModal[i].children[1].textContent);
+    const pruebaS = ghibli.films.find(
+      (film) => film.title === openMovieModal[i].children[1].textContent
+    );
     document.querySelector(".modal-movieTitle").textContent = pruebaS.title;
     document.querySelector(".modal-pic").src = pruebaS.poster;
-    document.querySelector(".modal-movieDescription").textContent = pruebaS.description;
-    document.querySelector(".modal-movieDate").textContent = `Release date: ${pruebaS.release_date}`;
-    document.querySelector(".modal-rating").textContent = `Score: ${pruebaS.rt_score}`;
-    
+    document.querySelector(".modal-movieDescription").textContent =
+      pruebaS.description;
+    document.querySelector(
+      ".modal-movieDate"
+    ).textContent = `Release date: ${pruebaS.release_date}`;
+    document.querySelector(
+      ".modal-rating"
+    ).textContent = `Score: ${pruebaS.rt_score}`;
+
     const people = pruebaS.people;
-    
+    document.querySelector(".modal-image-people").innerHTML = "";
     const imagesDiv = document.querySelector(".modal-image-people");
-    people.map(function(people) {const imagen = document.createElement("img");
+    people.map(function (people) {
+      const imagen = document.createElement("img");
+      imagen.className = "imagen-personajes";
       const textoImagen = document.createElement("p");
-      textoImagen.textContent = `Name: ${people.name}, Gender: ${people.gender}, Age: ${people.age}, Eye Color: ${people.eye_color}, Hair Color ${people.hair_color}, Specie: ${people.specie}`
-      imagen.src = people.img; 
+      textoImagen.className = "descripción-imagen";
+      textoImagen.innerHTML = `Name: ${people.name} <br> Gender: ${people.gender} <br> Age: ${people.age} <br> Eye Color: ${people.eye_color} <br> Hair Color ${people.hair_color} <br> Specie: ${people.specie}`;
+      imagen.src = people.img;
       imagesDiv.appendChild(imagen);
-      imagesDiv.appendChild(textoImagen)}); 
+      imagesDiv.appendChild(textoImagen);
+    });
+
+    const locations = pruebaS.locations;
+    document.querySelector(".modal-image-locations").innerHTML = ""; 
+    const imagesLocation = document.querySelector(".modal-image-locations");
+    locations.map(function (locations) {
+      const locacionImagen = document.createElement("img")
+      locacionImagen.className ="imagen-locacion";
+      const textoLocacion = document.createElement("p");
+      textoLocacion.className ="descripción-imagenlocacion"
+      textoLocacion.innerHTML = `Name: ${locations.name} <br> Climate: ${locations.climate} <br> Terrain: ${locations.terrain} <br> Surface water: ${locations.surface_water}`;
+      locacionImagen.src = locations.img;
+      imagesLocation.appendChild(locacionImagen);
+      imagesLocation.appendChild(textoLocacion);  
+         
+    });
+
+    const vehicles = pruebaS.vehicles;
+    document.querySelector(".modal-image-vehicles").innerHTML = ""; 
+    const imagesvehicles = document.querySelector(".modal-image-vehicles");
+    vehicles.map(function (vehicles) {
+      const vehiclesImagen = document.createElement("img")
+      vehiclesImagen.className ="imagen-locacion";
+      const textoVehicle = document.createElement("p");
+      textoVehicle.className ="descripción-imagenvehicle"
+      textoVehicle.innerHTML = `Name: ${vehicles.name} <br> Description: ${vehicles.description} <br> Vehicle class: ${vehicles.vehicle_class} <br> Length: ${vehicles.length} <br> Pilot: ${vehicles.pilot.name}`;
+      vehiclesImagen.src = vehicles.img;
+      imagesvehicles.appendChild(vehiclesImagen);
+      imagesvehicles.appendChild(textoVehicle);  
+    });
   });
 }
 
