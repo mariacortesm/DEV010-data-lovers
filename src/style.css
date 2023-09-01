@@ -1,7 +1,6 @@
 body{
 
     background: linear-gradient(to right, #f2ced5, #ebd0e5, #dad5f2, #c6dbf7, #b6e1f2);
-    /*width: 100vw;*/
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
@@ -22,52 +21,63 @@ select {
     border-color: #f2ced5;
 }
 
-section-facts {
-    margin-top: 1%;
+.section-facts {
+    position: fixed;
+    z-index: 999;
+    bottom: 25px;
+    right: 25px;
+    padding: 25px;
+    transition: ease 0.3s;
+}
+
+.section-facts:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
 }
 
 .label-fun {
     font-family: 'Quicksand', sans-serif;
     font-size: medium;
     font-weight: bold;
-    position: absolute;
-    margin-left: 117px;
+    position: fixed;
+    margin-left: 20px;
+    margin-bottom: 50px;
 }
 
 .bton-facts {
     background: #f2ced5;
     border-color: #f2ced5;
-    margin-top: 2%;
+    margin-top: 20%;
     margin-left: 8%;
-    margin-bottom: auto;
     width: 90px;
     height: 90px;
     background-image: url("https://i.pinimg.com/originals/4d/ec/91/4dec91e1d71b99b8c17afd7f0d3a9e0c.gif");
     background-size: cover;
-    border-radius: 50%;
+    border-radius: 50%;/*Para que se haga redonda la imagen*/
 }
 
 .modal-funFacts {
-    position: fixed;  /* para que se fije en la pantalla */
+    position: fixed;  /*Para que se fije en la pantalla */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #111111bd;
+    background-color: #111111bd;/*Establece un color de fondo semitransparente (negro con opacidad) para oscurecer el fondo detrás del modal.*/
     display: flex;
+    text-align: center;
     opacity: 0;
-    pointer-events: none; /* desactivamos cualquier evento del mouse */
-    transition: opacity .6s .9s;
-    --transform:translateY(-100vh);
-    --transition: transform .8s;
+    pointer-events: none; /*Desactivamos cualquier evento del mouse, lo que significa que los elementos debajo del modal podrán recibir eventos de clic u otros eventos del mouse.*/
+    transition: opacity .6s .9s;/*Define una transición suave para la opacidad del modal. La opacidad tarda 0.6 segundos en cambiar y comienza 0.9 segundos después de que se haya activado la transición*/
+    --transform:translateY(-100vh);/*Establece una variable CSS personalizada --transform que define una transformación que desplaza verticalmente el modal fuera de la pantalla (hacia arriba).*/
+    --transition: transform .8s;/*Establece una variable CSS personalizada --transition que define una duración de 0.8 segundos para la transición de transformación.*/
 }
 
 .modal-show {
-    opacity: 1;
-    pointer-events: unset;
-    transition: opacity .6s; /* primero se pone la opacidad y luego el transform de .8s*/
-    --transform:translateY(0); /*esto es una custom property*/
-    --transition: transform .8s .8s;
+    opacity: 1;/*opacidad se establece en 1, lo que hace que el elemento sea completamente visible.*/
+    pointer-events: unset;/*Se habilitan nuevamente los eventos del mouse en el elemento. Esto permite que los elementos dentro del modal puedan recibir eventos del mouse.*/
+    transition: opacity .6s; /*Define una transición suave para la opacidad del modal cuando la clase .modal-show se aplica. La opacidad tarda 0.6 segundos en cambiar*/
+    --transform:translateY(0);/*Esto es una custom property. Aquí se establece la propiedad personalizada --transform que define una transformación que anula cualquier desplazamiento vertical aplicado anteriormente. Esto hace que el modal regrese a su posición original en la pantalla*/
+    --transition: transform .8s .8s;/*La variable personalizada --transition se redefine para controlar la duración de la transición de transformación. En este caso, la transformación tarda 0.8 segundos en completarse y comienza 0.8 segundos después de que se haya activado la transición*/
 }
 
 .modal-container {
@@ -76,13 +86,12 @@ section-facts {
     max-width: 600px;
     max-height: 90%;
     background-color: #f6f6ee;
-    padding: 2em 2.5em;
-    display: grid;
+    padding: 2em 2.5em;/*Establece el espaciado interno del modal, con 2 unidades de medida en la parte superior/inferior y 2.5 unidades de medida en los lados.*/
     gap: 1em;
     place-items: center;
     grid-auto-columns: 100%;
-    transform: var(--transform);
-    transition: var(--transition);
+    transform: var(--transform);/*Aplica la transformación personalizada definida por la variable --transform. Esta transformación se utiliza para animar la entrada y salida del modal.*/
+    transition: var(--transition);/*Aplica la transición personalizada definida por la variable --transition. Esta transición controla la duración y el tiempo de inicio de la animación del modal.*/
 }
 
 .modal-image {
@@ -91,12 +100,12 @@ section-facts {
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 17%;
-    position:absolute;
+    position:absolute;/*Permite el posicionamiento absoluto del pseudo-elemento dentro del contenedor*/
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;   
+    z-index: -1;/*Coloca el pseudo-elemento detrás de otros elementos en la página, creando un efecto de fondo*/
 }
 
 .modal-title {
@@ -174,11 +183,9 @@ section-facts {
 .grid-container {
     display: grid;
     background-size: cover;
-    /*width: 89%;*/
-    grid-template-rows: repeat(auto-fill, minmax(240px, 1fr)); /* Cambio: Usar repeat para las filas */
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));/* Cambio: Reducir a dos columnas */
-    grid-gap: 30px; /* Cambio: Espacio entre las celdas */
-    /*margin: 20px 0px 0px 50px; /* Cambio: Ajustar márgenes */
+    grid-template-rows: repeat(auto-fill, minmax(240px, 1fr));/*RESPONSIVE. Define la plantilla para las filas de la cuadrícula. auto-fill indica que se agregarán filas automáticamente para llenar el espacio disponible. minmax(240px, 1fr) establece que cada fila tendrá un mínimo de 240px de altura y se expandirá si hay espacio disponible*/
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));/*RESPONSIVE. Define la plantilla para las columnas de la cuadrícula. auto-fill indica que se agregarán columnas automáticamente para llenar el espacio disponible. minmax(280px, 1fr) establece que cada columna tendrá un mínimo de 280px de ancho y se expandirá si hay espacio disponible*/
+    grid-gap: 30px; /*Espacio entre las celdas */
     margin: 2% 1% 5% 7%;
 }
 
@@ -193,7 +200,7 @@ section-facts {
     font-size: 70%;
 }
 
-.posterM {
+.posterM { /*grid container*/
     width: 130px;
     height: 190px;
 }
@@ -205,27 +212,140 @@ p {
 
 }
 
-.modal-movieParagraph{
-  font-family: 'Quicksand', sans-serif;
-  margin-bottom: 10px;
+.modal-poster {/*modal pelis*/
+    position: fixed; /* para que se fije en la pantalla */
+    height: 610px;
+    width: 68%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-movieShow {
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.modal-right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 2px 2px 7px;
+    padding: 0px 0px 2px 2px;
+    height: 100%;
+    width: 95%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 70%;
+}
+
+.image-characters {
+    width: 60px;
+    height: 70px;
+    
+}
+
+.description-image {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 70%;
+}
+
+.modal-image-people {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-location {
+    width: 60px;
+    height: 70px;
+}
+
+.description-imagelocation {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 70%;
+}
+
+.modal-image-locations {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-vehicles {
+    width: 60px;
+    height: 70px;
+}
+
+.description-imagevehicle {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 70%;
+}
+
+.modal-image-vehicles {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modal-left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 2px 2px 7px;
+    padding: 0px 0px 2px 2px;
+    height: 100%;
+    width: 70%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 70%;
+}
+
+.modal-infoMovies {
+    margin: 0%;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #f6f6ee;
+    padding: 0px 0px 0px 0px;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-template-columns: 300px 600px; /* Dividir en dos columnas iguales */
+}
+
+.modal-pic {
+    width: 130px;
+    height: 190px;
+    margin-top: 15px;
+}
+
+.modal-movieTitle {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.modal-movieDescription {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 100%;
+    margin-bottom: 10px;
 }
 
 .modal-movieClose {
-  text-decoration: none;
-  color: #f6f6ee;
-  background-color: #f26250;
-  padding: 1em 3em ;
-  border: 1px solid #f6f6ee;
-  display: inline-block;
-  font-weight: 300;
-  transition: background-color .3s;
+    text-decoration: none;
+    color: #f6f6ee;
+    background-color: #f26250;
+    padding: 1em 3em;
+    border: 1px solid #f6f6ee;
+    font-weight: 300;
+    transition: background-color .3s;
+    margin-top: auto;
 }
 
-.modal-movieClose:hover{
-  color: #f26250;
-  background-color: #f6f6ee;
+.modal-movieClose:hover {
+    color: #f26250;
+    background-color: #f6f6ee;
 }
-
 
 footer {
 
