@@ -228,3 +228,15 @@ closeMovieModal.addEventListener("click", (m) => {
  
 // document.getElementById("gridmovies").innerHTML = "";
 // show(rightOrder);
+
+
+
+
+
+
+
+
+
+
+//hola, Alex
+
