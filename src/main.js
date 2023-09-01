@@ -121,43 +121,43 @@ for (let i = 0; i < openMovieModal.length; i++) {
     document.querySelector(".modal-image-people").innerHTML = "";
     const imagesDiv = document.querySelector(".modal-image-people");
     people.map(function (people) {
-      const imagen = document.createElement("img");
-      imagen.className = "imagen-personajes";
-      const textoImagen = document.createElement("p");
-      textoImagen.className = "descripción-imagen";
-      textoImagen.innerHTML = `Name: ${people.name} <br> Gender: ${people.gender} <br> Age: ${people.age} <br> Eye Color: ${people.eye_color} <br> Hair Color ${people.hair_color} <br> Specie: ${people.specie}`;
-      imagen.src = people.img;
-      imagesDiv.appendChild(imagen);
-      imagesDiv.appendChild(textoImagen);
+      const image = document.createElement("img");
+      image.className = "image-characters";
+      const textImage = document.createElement("p");
+      textImage.className = "description-image";
+      textImage.innerHTML = `Name: ${people.name} <br> Gender: ${people.gender} <br> Age: ${people.age} <br> Eye Color: ${people.eye_color} <br> Hair Color ${people.hair_color} <br> Specie: ${people.specie}`;
+      image.src = people.img;
+      imagesDiv.appendChild(image);
+      imagesDiv.appendChild(textImage);
     });
 
     const locations = pruebaS.locations;
     document.querySelector(".modal-image-locations").innerHTML = ""; 
     const imagesLocation = document.querySelector(".modal-image-locations");
     locations.map(function (locations) {
-      const locacionImagen = document.createElement("img")
-      locacionImagen.className ="imagen-locacion";
-      const textoLocacion = document.createElement("p");
-      textoLocacion.className ="descripción-imagenlocacion"
-      textoLocacion.innerHTML = `Name: ${locations.name} <br> Climate: ${locations.climate} <br> Terrain: ${locations.terrain} <br> Surface water: ${locations.surface_water}`;
-      locacionImagen.src = locations.img;
-      imagesLocation.appendChild(locacionImagen);
-      imagesLocation.appendChild(textoLocacion);  
+      const locationImage = document.createElement("img")
+      locationImage.className ="image-location";
+      const textLocation = document.createElement("p");
+      textLocation.className ="description-imagelocation"
+      textLocation.innerHTML = `Name: ${locations.name} <br> Climate: ${locations.climate} <br> Terrain: ${locations.terrain} <br> Surface water: ${locations.surface_water}`;
+      locationImage.src = locations.img;
+      imagesLocation.appendChild(locationImage);
+      imagesLocation.appendChild(textLocation);  
          
     });
 
     const vehicles = pruebaS.vehicles;
     document.querySelector(".modal-image-vehicles").innerHTML = ""; 
-    const imagesvehicles = document.querySelector(".modal-image-vehicles");
+    const imagesVehicles = document.querySelector(".modal-image-vehicles");
     vehicles.map(function (vehicles) {
-      const vehiclesImagen = document.createElement("img")
-      vehiclesImagen.className ="imagen-locacion";
-      const textoVehicle = document.createElement("p");
-      textoVehicle.className ="descripción-imagenvehicle"
-      textoVehicle.innerHTML = `Name: ${vehicles.name} <br> Description: ${vehicles.description} <br> Vehicle class: ${vehicles.vehicle_class} <br> Length: ${vehicles.length} <br> Pilot: ${vehicles.pilot.name}`;
-      vehiclesImagen.src = vehicles.img;
-      imagesvehicles.appendChild(vehiclesImagen);
-      imagesvehicles.appendChild(textoVehicle);  
+      const vehiclesImage = document.createElement("img")
+      vehiclesImage.className ="image-vehicles";
+      const textVehicle = document.createElement("p");
+      textVehicle.className ="description-imagevehicle"
+      textVehicle.innerHTML = `Name: ${vehicles.name} <br> Description: ${vehicles.description} <br> Vehicle class: ${vehicles.vehicle_class} <br> Length: ${vehicles.length} <br> Pilot: ${vehicles.pilot.name}`;
+      vehiclesImage.src = vehicles.img;
+      imagesVehicles.appendChild(vehiclesImage);
+      imagesVehicles.appendChild(textVehicle);  
     });
   });
 }

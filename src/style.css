@@ -241,13 +241,13 @@ p {
     font-size: 70%;
 }
 
-.imagen-personajes {
+.image-characters {
     width: 60px;
     height: 70px;
     
 }
 
-.descripción-imagen {
+.description-image {
     font-family: 'Quicksand', sans-serif;
     font-size: 70%;
 }
@@ -257,12 +257,12 @@ p {
     flex-wrap: wrap;
 }
 
-.imagen-locacion {
+.image-location {
     width: 60px;
     height: 70px;
 }
 
-.descripción-imagenlocacion {
+.description-imagelocation {
     font-family: 'Quicksand', sans-serif;
     font-size: 70%;
 }
@@ -272,19 +272,19 @@ p {
     flex-wrap: wrap;
 }
 
-.imagen-locacion {
+.image-vehicles {
     width: 60px;
     height: 70px;
+}
+
+.description-imagevehicle {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 70%;
 }
 
 .modal-image-vehicles {
     display: flex;
     flex-wrap: wrap;
-}
-
-.descripción-imagenvehicle {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 70%;
 }
 
 .modal-left-column {
@@ -328,11 +328,6 @@ p {
     font-size: 100%;
     margin-bottom: 10px;
 }
-
-/*.modal-movieParagraph {
-    font-family: 'Quicksand', sans-serif;
-    margin-bottom: 10px;
-}*/
 
 .modal-movieClose {
     text-decoration: none;
