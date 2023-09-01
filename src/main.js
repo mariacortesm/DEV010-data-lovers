@@ -79,7 +79,9 @@ filtersProducer.addEventListener("change", (input) => {
 // Este fragmento de código actualiza dinámicamente el contenido de un elemento HTML con la clase "modal-paragraph". El contenido muestra información sobre vehículos en las películas, el porcentaje de personajes femeninos y el porcentaje de personajes masculinos en las películas del Studio Ghibli. Los valores dinámicos se calculan utilizando las funciones proporcionadas y se insertan en la cadena de plantilla para mostrar la información actualizada en el modal.
 document.querySelector(
   ".modal-paragraph"
+
 ).innerHTML = `Did you know that there are six vehicles (whether magical or not) featured in Studio Ghibli films?" ${computeVehicle(
+
   ghibli.films
 )} <br><br> Did you know the percentage of female characters (includes humans and other species) featured in Studio Ghibli films is: ${computeFemaleCharacterPercentage(
   ghibli.films

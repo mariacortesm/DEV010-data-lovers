@@ -1,14 +1,19 @@
+
 import ghibli from "./data/ghibli/ghibli.js"; //se importa la data del proyecto de Studio Ghibli
 
 //Función para ordenar las películas en orden alfabético. Export significa que la función puede ser utilizada en otros lugares del código.
 export function extractTitle(list) { //La función se llama "extractTitle" y toma un parámetro llamado "list" (la lista de títulos de las películas)
   return list.sort(function (a, b) { //Se usa el método "sort()" en la lista para ordenar sus elementos. Este método toma una función como argumento, que decide cómo se deben ordenar los elementos. La función dentro de "sort()"" compara dos elementos, "a" y "b", basándose en sus títulos.
     if (a.title > b.title) { //Si el título de "a" es mayor que el título de "b", devuelve 1, lo que indica que "a" debería ir después de "b" en la ordenación.
+
+
       return 1;
     }
     if (a.title < b.title) {//Si el título de "a" es menor que el título de "b", devuelve -1, lo que indica que "a" debería ir antes de "b" en la ordenación.
       return -1;
     }
+
+
     return 0;//Si los títulos son iguales, devuelve 0, lo que significa que no importa el orden entre a y b.
   }); //Al final la función retorna la lista ordenada según las reglas establecidas en la función de comparación.
 }
@@ -16,6 +21,7 @@ export function extractTitle(list) { //La función se llama "extractTitle" y tom
 //Función pura para filtrar por Director y Productor. 
 export function filterDirector(director) {//La Función "filterDirector" toma como parámetro "director". {} es el cuerpo de la función, donde se describe lo que la función hace.
   return ghibli.films.filter((film) => film.director === director);
+
 }
 //Se usa el método "filter()" en la propiedad "films" del objeto "ghibli" (que contiene info sobre las películas de SG). "filter()" crea una nueva lista de películas que cumplan con cierta condición. Dentro de "filter()", hay una arrow function que se ejecutará por cada película en la lista de películas. Esta función toma una película "(film)" como entrada y verifica si el director de esa película coincide con el valor pasado como argumento a la función "filterDirector". La comparación "(film.director === director)" verifica si el director de la película actual es igual al director proporcionado como argumento a la función "filterDirector". La función "filter()" devolverá una nueva lista que contiene solo las películas cuyos directores coincidan con el "director" proporcionado.
 
@@ -57,6 +63,7 @@ export function computeMaleCharacterPercentage(films) {//Es lo mismo que female
   }
   const percentage = (totalMaleCharacters / maleCharacter) * 100;
   return percentage;
+
 }
 
 //   const order = list.map((elemento) => elemento.title);
