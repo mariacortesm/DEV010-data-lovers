@@ -3,25 +3,17 @@
 
 <head>
   <meta charset="utf-8">
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- asegura que el sitio web sea responsive, ajustando el contenido al ancho del dispositivo y evitando un zoom excesivo al cargar la página. "viewport" indica la configuración de la ventana de visualización.-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- asegura que el sitio web sea responsive, ajustando el contenido al ancho del dispositivo y evitando un zoom excesivo al cargar la página. "viewport" indica la configuración de la ventana de visualización.-->
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Quicksand es nuestra fuente para todo el proyecto-->
-
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
   <header>
-
-
-    <img src="Images/Studio-Ghibli-logo.png" alt="Studio Ghibli logo">
-    <!--Este el logo de Studio Ghibli de la interfaz-->
+    <img src="Images/Studio-Ghibli-logo.png" alt="Studio Ghibli logo"><!--Este el logo de Studio Ghibli de la interfaz-->
   </header>
   <div id="root"></div>
   <section class="modal-funFacts"> <!--esta sección es la del botón con imagen que abre el modal box de los Fun Facts-->
@@ -29,23 +21,18 @@
       <img class="modal-image">
       <h1 class="modal-title">Welcome to fun facts!</h1>
       <p class="modal-paragraph"></p> <!--Esta es la info dentro del modal box de fun facts-->
-
       <button class="modal-close">Close</button>
     </div>
   </section>
 
-  <div class="botonesdatoscuriosos">
-    <section class="section-facts">
-      <!--Esta sección es para insertar el gif en el botón y el texto Click me for some fun facts!-->
+  <div class="buttnfunfacts">
+    <section class="section-facts"><!--Esta sección es para insertar el gif en el botón y el texto Click me for some fun facts!-->
       <label class="label-fun">Click me!</label>
-      <button class="bton-facts" id="female-percent-button"></button>
-      <!--se puso "female-percent-button" porque al principio solo mostrábamos el cálculo de los personajes femeninos, después se agregó el de los masculinos y ya no lo cambiamos-->
+      <button class="bton-facts" id="female-percent-button"></button><!--se puso "female-percent-button" porque al principio solo mostrábamos el cálculo de los personajes femeninos, después se agregó el de los masculinos y ya no lo cambiamos-->
     </section>
-    <div class="botonesorder">
+    <div class="buttnsorder">
       <div class="btonfilterdirector">
-        <section class="button-search">
-          <!--Esta sección que integra un label y un option es para la función de filtrar por Director y Productor-->
-
+        <section class="button-search"><!--Esta sección que integra un label y un option es para la función de filtrar por Director y Productor-->
           <label>Search by Director:</label>
           <select id="director" name="director">
             <option value="Select a Director">Select a Director</option>
@@ -67,21 +54,16 @@
           <option value="Toru Hara">Toru Hara</option>
           <option value="Toshio Suzuki">Toshio Suzuki</option>
           <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>
-
         </select>
       </div>
       <section class="button-order"> <!--Esta sección incluye los botones de ordenar por orden alfabético-->
-
-
         <label>Sort Movies by:</label>
         <button id="ascending-button">Aa-Zz</button>
         <button id="descending-button">Zz-Aa</button>
       </section>
     </div>
   </div>
-
-  <section class="grid-container" id="gridmovies">
-    <!--Esta sección está relacionada con el display grid que contiene los posters e info de las películas-->
+  <section class="grid-container" id="gridmovies"><!--Esta sección está relacionada con el display grid que contiene los posters e info de las películas-->
   </section>
   <section class="modal-poster">
     <div class="modal-infoMovies">
@@ -111,14 +93,11 @@
   <script src="main.js" type="module"></script>
 </body>
 
-
 <footer>
   <p>&#169 María Ximena y Alex Olalde</p>
 </footer>
 
 </html>
-
-
 
 
 <!-- <input type="search" name="ghiblisearch" list="elementslist" placeholder=Search>
