@@ -5,7 +5,8 @@
   <meta charset="utf-8">
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- asegura que el sitio web sea responsive, ajustando el contenido al ancho del dispositivo y evitando un zoom excesivo al cargar la página. "viewport" indica la configuración de la ventana de visualización.-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- asegura que el sitio web sea responsive, ajustando el contenido al ancho del dispositivo y evitando un zoom excesivo al cargar la página. "viewport" indica la configuración de la ventana de visualización.-->
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Quicksand es nuestra fuente para todo el proyecto-->
@@ -19,10 +20,11 @@
   <header>
 
 
-    <img src="Images/Studio-Ghibli-logo.png" alt="Studio Ghibli logo"> <!--Este el logo de Studio Ghibli de la interfaz-->
+    <img src="Images/Studio-Ghibli-logo.png" alt="Studio Ghibli logo">
+    <!--Este el logo de Studio Ghibli de la interfaz-->
   </header>
   <div id="root"></div>
-  <section class="modal-funFacts">  <!--esta sección es la del botón con imagen que abre el modal box de los Fun Facts-->
+  <section class="modal-funFacts"> <!--esta sección es la del botón con imagen que abre el modal box de los Fun Facts-->
     <div class="modal-container">
       <img class="modal-image">
       <h1 class="modal-title">Welcome to fun facts!</h1>
@@ -30,50 +32,57 @@
 
       <button class="modal-close">Close</button>
     </div>
-  </section> 
-  
-  <section class="section-facts"> <!--Esta sección es para insertar el gif en el botón y el texto Click me for some fun facts!-->
-    <label class="label-fun">Click me for some fun facts!</label>
-    <button class="bton-facts" id="female-percent-button"></button> <!--se puso "female-percent-button" porque al principio solo mostrábamos el cálculo de los personajes femeninos, después se agregó el de los masculinos y ya no lo cambiamos-->
   </section>
 
+  <div class="botonesdatoscuriosos">
+    <section class="section-facts">
+      <!--Esta sección es para insertar el gif en el botón y el texto Click me for some fun facts!-->
+      <label class="label-fun">Click me!</label>
+      <button class="bton-facts" id="female-percent-button"></button>
+      <!--se puso "female-percent-button" porque al principio solo mostrábamos el cálculo de los personajes femeninos, después se agregó el de los masculinos y ya no lo cambiamos-->
+    </section>
+    <div class="botonesorder">
+      <div class="btonfilterdirector">
+        <section class="button-search">
+          <!--Esta sección que integra un label y un option es para la función de filtrar por Director y Productor-->
 
-  <section class="button-search"> <!--Esta sección que integra un label y un option es para la función de filtrar por Director y Productor-->
+          <label>Search by Director:</label>
+          <select id="director" name="director">
+            <option value="Select a Director">Select a Director</option>
+            <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+            <option value="Isao Takahata">Isao Takahata</option>
+            <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+            <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+            <option value="Gorō Miyazaki">Gorō Miyazaki</option>
+            <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+          </select>
+        </section>
+      </div>
+      <div class="btonfilterproducer">
+        <label>Search by Producer:</label>
+        <select id="producer" name="producer">
+          <option value="Select a Producer">Select a Producer</option>
+          <option value="Isao Takahata">Isao Takahata</option>
+          <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+          <option value="Toru Hara">Toru Hara</option>
+          <option value="Toshio Suzuki">Toshio Suzuki</option>
+          <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>
 
-    <label>Search by Director:</label>
-    <select id="director" name="director">
-      <option value="Select a Director">Select a Director</option>
-      <option value="Hayao Miyazaki">Hayao Miyazaki</option>
-      <option value="Isao Takahata">Isao Takahata</option>
-      <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
-      <option value="Hiroyuki Morita">Hiroyuki Morita</option>
-      <option value="Gorō Miyazaki">Gorō Miyazaki</option>
-      <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
-    </select>
-    <label>Search by Producer:</label>
-    <select id="producer" name="producer">
-      <option value="Select a Producer">Select a Producer</option>
-      <option value="Isao Takahata">Isao Takahata</option>
-      <option value="Hayao Miyazaki">Hayao Miyazaki</option>
-      <option value="Toru Hara">Toru Hara</option>
-      <option value="Toshio Suzuki">Toshio Suzuki</option>
-      <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>
+        </select>
+      </div>
+      <section class="button-order"> <!--Esta sección incluye los botones de ordenar por orden alfabético-->
 
-    </select>
+
+        <label>Sort Movies by:</label>
+        <button id="ascending-button">Aa-Zz</button>
+        <button id="descending-button">Zz-Aa</button>
+      </section>
+    </div>
+  </div>
+
+  <section class="grid-container" id="gridmovies">
+    <!--Esta sección está relacionada con el display grid que contiene los posters e info de las películas-->
   </section>
-
-  <section class="button-order"> <!--Esta sección incluye los botones de ordenar por orden alfabético-->
-
-
-    <label>Sort Movies by:</label>
-    <button id="ascending-button">Aa-Zz</button>
-    <button id="descending-button">Zz-Aa</button>
-  </section>
-
-
-  <section class="grid-container" id="gridmovies"> <!--Esta sección está relacionada con el display grid que contiene los posters e info de las películas-->
-  </section>
-
   <section class="modal-poster">
     <div class="modal-infoMovies">
       <div class="modal-left-column">
@@ -83,24 +92,30 @@
         <p class="modal-movieDate"> </p>
         <p class="modal-rating"></p>
       </div>
-  
+
       <div class="modal-right-column">
+        <p class="titlemoviesmodal">Characters</p>
         <div class="modal-image-people">
         </div>
+        <p class="titlemoviesmodal">Locations</p>
         <div class="modal-image-locations">
         </div>
+        <p class="titlemoviesmodal">Vehicles</p>
         <div class="modal-image-vehicles">
         </div>
       </div>
+
       <button class="modal-movieClose">Close</button>
+    </div>
   </section>
-  <script src="main.js" type="module"></script> 
-</body> 
+  <script src="main.js" type="module"></script>
+</body>
 
 
 <footer>
   <p>&#169 María Ximena y Alex Olalde</p>
 </footer>
+
 </html>
 
 
