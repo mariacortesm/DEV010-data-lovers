@@ -25,24 +25,22 @@ function show(dataghibli) {
     const info = document.createElement("p"); // Crear un elemento <p> para mostrar información adicional de la película
     info.innerHTML = `<p> Director: ${dataghibli[gh].director}<br> Producer: ${dataghibli[gh].producer}<br> Release date: ${dataghibli[gh].release_date}<br> Score: ${dataghibli[gh].rt_score}</p>`;
     sectionMovies.appendChild(poster); // Adjuntar los elementos creados a la sección de la película
-    sectionMovies.appendChild(title);
+    sectionMovies.appendChild(title);//appendChild sirve para agregar elementos desde JS a la interfaz sin necesidad de agregarlos en el HTML, lo que resulta es un código simplificado.
     sectionMovies.appendChild(info);
-    dataMovies.appendChild(sectionMovies); // Adjuntar la sección de la película al contenedor "gridmovies"
-  } //appendChild sirve para agregar elementos desde JS a la interfaz sin necesidad de agregarlos en el HTML, lo que resulta es un código simplificado.
+    dataMovies.appendChild(sectionMovies); // Adjuntar la sección de la película al contenedor "gridmovies". 
+  } 
 }
 
 show(ghibli.films); //Llamar a la función show con la lista de películas de ghibli.films
 const ascendingBton = document.getElementById("ascending-button"); //Obtener el botón con id "ascending-button".
-ascendingBton.addEventListener("click", () => {
-  //Agregar un evento de click.
+ascendingBton.addEventListener("click", () => {//Agregar un evento de click.
   const rightOrder = extractTitle(ghibli.films); //Extraer los títulos de las películas y ordenar alfabéticamente.
   document.getElementById("gridmovies").innerHTML = ""; //Limpiar el contenedor "gridmovies"
   show(rightOrder); //Mostrar las películas en orden ascendente.
 });
 
 const descendingBton = document.getElementById("descending-button"); // Obtener el botón con id "descending-button"
-descendingBton.addEventListener("click", () => {
-  //Agregar un evento de click.
+descendingBton.addEventListener("click", () => {//Agregar un evento de click.
   const orderReverse = extractTitle(ghibli.films).reverse(); //Extraer los títulos de las películas, ordenar alfabéticamente y revertir el orden.
   document.getElementById("gridmovies").innerHTML = ""; //Limpiar el contenedor "gridmovies"
   show(orderReverse); //Mostrar las películas en orden descendente.
@@ -54,29 +52,26 @@ const modalData = document.querySelector(".modal-funFacts"); //Esta constante ta
 const closeModal = document.querySelector(".modal-close"); //Esta constante se crea utilizando document.querySelector(".modal-close")
 
 //Estas constantes se utilizan para manipular la visibilidad del modal de Fun Facts en función de las interacciones del usuario con los botones o enlaces correspondientes.
-openModal.addEventListener("click", (e) => {
-  //Se agrega un evento de clic que, cuando se activa (cuando el usuario hace clic en el botón o enlace con la clase "bton-facts"), se añade la clase "modal-show" al elemento modalData. Esto hace que el modal se muestre en la pantalla.
+openModal.addEventListener("click", (e) => {//Se agrega un evento de clic que, cuando se activa (cuando el usuario hace clic en el botón o enlace con la clase "bton-facts"), se añade la clase "modal-show" al elemento modalData. Esto hace que el modal se muestre en la pantalla.
   e.preventDefault(); //Evitar que cree un comportamiento por defecto.
   modalData.classList.add("modal-show"); //Muestra el modal.
 });
 
-closeModal.addEventListener("click", (e) => {
-  //Se agrega un evento de clic que, cuando se activa (cuando el usuario hace clic en el botón o enlace con la clase "modal-close"), se elimina la clase "modal-show" del elemento modalData. Esto oculta el modal.
+closeModal.addEventListener("click", (e) => {//Se agrega un evento de clic que, cuando se activa (cuando el usuario hace clic en el botón o enlace con la clase "modal-close"), se elimina la clase "modal-show" del elemento modalData. Esto oculta el modal.
   e.preventDefault(); //Evitar que cree un comportamiento por defecto.
   modalData.classList.remove("modal-show"); //Ocultar el modal.
 });
 
 // Este código configura una interacción que permite al usuario filtrar las películas por director. Cuando el usuario cambia el valor del campo de entrada de director, se filtran las películas y se actualiza el contenido de la página para mostrar solo las películas dirigidas por el director seleccionado. Es lo mismo para producer.
 const filterinput = document.getElementById("director"); //Aquí se obtiene una referencia al elemento HTML que tiene el atributo id con el valor "director".
-filterinput.addEventListener("change", (input) => {
-  //Cuando el usuario selecciona o ingresa un nuevo director para filtrar, se activará esta función.
+filterinput.addEventListener("change", (input) => {//Cuando el usuario selecciona o ingresa un nuevo director para filtrar, se activará esta función.
   const selectedDirector = input.target.value; //Dentro del manejador de evento, se obtiene el valor del campo de entrada. input se refiere al evento, e input.target.value es el valor del campo de entrada seleccionado o ingresado por el usuario. Este valor representa el director por el cual el usuario desea filtrar las películas.
   const filteredDirector = filterDirector(selectedDirector); //Aquí se utiliza la función filterDirector() para filtrar la lista de películas por el director seleccionado. selectedDirector se pasa como argumento a esta función, lo que significa que la función devolverá una lista de películas que fueron dirigidas por el director seleccionado.
   document.getElementById("gridmovies").innerHTML = ""; //Esto borra el contenido del elemento con el id "gridmovies". Esto se hace para eliminar las películas que podrían estar siendo mostradas actualmente en ese contenedor.
   show(filteredDirector); //Se llama a la función show() con la lista de películas filtradas por director. Esto actualiza el contenido de la página mostrando solo las películas dirigidas por el director seleccionado.
 });
 
-const filtersProducer = document.getElementById("producer"); //Configurar interacción para filtrar por productor
+const filtersProducer = document.getElementById("producer");//Configurar interacción para filtrar por productor
 filtersProducer.addEventListener("change", (input) => {
   const selectedProducer = input.target.value;
   const filteredProducer = filterProducer(selectedProducer);
@@ -111,21 +106,21 @@ for (let i = 0; i < openMovieModal.length; i++) {
   openMovieModal[i].addEventListener("click", (m) => {
     m.preventDefault(); //Evitar que cree un comportamiento por defecto
     modalMovieData.classList.add("modal-movieShow");
-    const pruebaS = ghibli.films.find(
+    const dataS = ghibli.films.find(
       (film) => film.title === openMovieModal[i].children[1].textContent
     );
-    document.querySelector(".modal-movieTitle").textContent = pruebaS.title;
-    document.querySelector(".modal-pic").src = pruebaS.poster;
+    document.querySelector(".modal-movieTitle").textContent = dataS.title;
+    document.querySelector(".modal-pic").src = dataS.poster;
     document.querySelector(".modal-movieDescription").textContent =
-      pruebaS.description;
+    dataS.description;
     document.querySelector(
       ".modal-movieDate"
-    ).textContent = `Release date: ${pruebaS.release_date}`;
+    ).textContent = `Release date: ${dataS.release_date}`;
     document.querySelector(
       ".modal-rating"
-    ).textContent = `Score: ${pruebaS.rt_score}`;
+    ).textContent = `Score: ${dataS.rt_score}`;
 
-    const people = pruebaS.people;
+    const people = dataS.people;
     document.querySelector(".modal-image-people").innerHTML = "";
     const imagesDiv = document.querySelector(".modal-image-people");
     people.map(function (people) {
@@ -142,7 +137,7 @@ for (let i = 0; i < openMovieModal.length; i++) {
       imagesDiv.appendChild(containerPeople);
     });
 
-    const locations = pruebaS.locations;
+    const locations = dataS.locations;
     document.querySelector(".modal-image-locations").innerHTML = "";
     const imagesLocation = document.querySelector(".modal-image-locations");
     locations.map(function (locations) {
@@ -159,7 +154,7 @@ for (let i = 0; i < openMovieModal.length; i++) {
       imagesLocation.appendChild(containerLocations);
     });
 
-    const vehicles = pruebaS.vehicles;
+    const vehicles = dataS.vehicles;
     document.querySelector(".modal-image-vehicles").innerHTML = "";
     const imagesVehicles = document.querySelector(".modal-image-vehicles");
     vehicles.map(function (vehicles) {
