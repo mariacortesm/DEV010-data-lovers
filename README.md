@@ -1,641 +1,189 @@
-# Data Lovers
-
-## Índice
-
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Consideraciones técnicas](#7-consideraciones-técnicas)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
-* [9. Checklist](#9-checklist)
+# Data Lovers (Studio Ghibli)
 
-***
+## Table of Contents
 
-## 1. Preámbulo
+1.  Preamble
+2.  Project Summary 2.1. What is Data Lovers?
+3.  User Stories 
+3.1. Getting Started 
+3.2. User Stories
+4.  Project Organization
+5.  User Interface Design 
+5.1. Low-Fidelity Prototype 
+5.2. High-Fidelity Prototype
+7.  Code 6.1. Tests
+8.  Technologies Used
+9.  Useful Resources
+    
 
-Según [Forbes](https://www.forbes.com/sites/bernardmarr/2018/05/21/how-much-data-do-we-create-every-day-the-mind-blowing-stats-everyone-should-read),
-el 90% de la data que existe hoy ha sido creada durante los últimos dos años.
-Cada día generamos 2.5 millones de terabytes de datos, una cifra sin
-precedentes.
+## 1. Preamble
 
-No obstante, los datos por sí mismos son de poca utilidad. Para que esas
-grandes cantidades de datos se conviertan en **información** fácil de leer para
-los usuarios, necesitamos entender y procesar estos datos. Una manera simple de
-hacerlo es creando _interfaces_ y _visualizaciones_.
+According to [Forbes](https://www.forbes.com/sites/bernardmarr/2018/05/21/how-much-data-do-we-create-every-day-the-mind-blowing-stats-everyone-should-read), 90% of the data that exists today has been created in the last two years. Every day, we generate 2.5 million terabytes of data, an unprecedented figure.
 
-En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte
-izquierda se puede construir una interfaz amigable y entendible por las
-usuarias, al lado derecho.
+However, data by itself is of little use; for it to become **information** that is easy for users to read, we need to understand and process it. One simple way to do this is by creating _interfaces_ and _visualizations_, like the one we have created in this project.
 
-![pokemon-data-to-ui](https://user-images.githubusercontent.com/12631491/218505816-c6d11758-9de4-428f-affb-2a56ea4d68c4.png)
+**Unrendered Data**
+<a href="https://ibb.co/Jm648W1"><img src="https://i.ibb.co/GnYLGf6/preambulo1.png" alt="preambulo1" border="0"></a>
 
-## 2. Resumen del proyecto
+**Rendered Data**
+<a href="https://ibb.co/LkPCbGT"><img src="https://i.ibb.co/VjNvrKF/preambulo2.png" alt="preambulo2" border="0"></a>
 
-En este proyecto **construirás una _página web_ para visualizar un
-_conjunto (set) de datos_** que se adecúe a lo que descubras que tu usuario
-necesita.
+## 2. Project Summary
 
-Como entregable final tendrás una página web que permita **visualizar la data,
-filtrarla, ordenarla y hacer algún cálculo agregado**. Con cálculo agregado
-nos referimos a distintos cálculos que puedes hacer con la data para mostrar
-información aún más relevante para los usuarios (promedio, el valor máximo
-o mínimo, etc).
+**2.1** **What is Data Lovers?**
 
-Esta vez te proponemos una serie de datos de diferentes _temáticas_ para que
-explores y decidas con qué temática te interesa trabajar. Hemos elegido
-específicamente estos sets de datos porque creemos que se adecúan bien a esta
-etapa de tu aprendizaje.
+It is a website designed to visualize a dataset that suits our users' needs.
 
-Una vez que definas tu área de interés, buscar entender quién es tu usuario
-y qué necesita saber o ver exactamente; luego podrás construir la interfaz que
-le ayude a interactuar y entender mejor esos datos.
+We have designed an interface that displays data from the _Studio Ghibli_ film production company. This interface provides users with various types of data, ranging from production titles to IMDb scores, including information about characters, locations, directors, producers, species, and other elements that appear in the animations of the renowned Japanese film studio.
 
-Estos son datos que te proponemos:
+Since the project only displays, organizes, and filters the collected information, it is an easy-to-use tool for users, whether they are fans who want to explore very specific movie details or newcomers to the wonderful and magical world of _Studio Ghibli_ stories.
 
-* [Pokémon](src/data/pokemon/pokemon.json):
-  En este set encontrarás una lista con los 251 Pokémon de la región de Kanto
-  y Johto, junto con sus respectivas estadísticas usadas en el juego
-  [Pokémon GO](http://pokemongolive.com).
-  - [Investigación con jugadores de Pokémon Go](src/data/pokemon/README.md)
+In order to create a product that would be both interesting and useful, we conducted preliminary research within a users group. This research guided our entire project, from time planning and sprint objectives to the type of data to be displayed in the interface and the color palette to be used.
 
-* [League of Legends - Challenger leaderboard](src/data/lol/lol.json):
-  Este set de datos muestra la lista de campeones en una liga del
-  juego League of Legends (LoL).
-  - [Investigación con jugadores de LoL](src/data/lol/README.md)
+## 3. User Stories
 
-* [Rick and Morty](src/data/rickandmorty/rickandmorty.json).
-  Este set nos proporciona la lista de los personajes de la serie Rick and
-  Morty. [API Rick and Morty](https://rickandmortyapi.com).
-  - [Investigación con seguidores de Rick and Morty](src/data/rickandmorty/README.md)
+**3.1 Getting Started**
 
-* [Juegos Olímpicos de Río de Janeiro](src/data/athletes/athletes.json).
-  Este set nos proporciona la lista de los atletas que ganaron medallas en las
-  olímpiadas de Río de Janeiro.
-  - [Investigación con interesados en juegos olímpicos de Río de Janeiro](src/data/athletes/README.md)
+As an initial step, we answered a series of questions that helped us generate a research group on which we would base our project.
 
-* [Studio Ghibli](src/data/ghibli/ghibli.json).
-  En este set encontrarás una lista de las animaciones y sus personajes del
-  [Studio Ghibli](https://ghiblicollection.com/).
-  - [Investigación con seguidores de las animaciones del Studio Ghibli](src/data/ghibli/README.md)
+-   Who are the primary users of the product?
+-   What are the goals of these users in relation to the product?
+-   What are the most relevant data they want to see in the interface and why?
+-   When do they use or would they use the product?
 
-* [Countries](src/data/countries/countries.json).
-  En este set encontrarás la informacion de varios paises
-  - [Investigación](src/data/countries/README.md)
+![Getting Started](https://i.ibb.co/Y88ZS49/Figma-primeros-pasos.png)
 
-* [Tarot](src/data/tarot/tarot.json).
-  En este set encontrarás la informacion acerca de algunas cartas de tarot.
-  - [Investigación](src/data/tarot/README.md)
+**3.2 User Stories**
 
-* [Breaking Bad](src/data/breakingbad/breakingbad.json).
-  En este set encontrarás la informacion sobre los personajes de la serie breakingbad.
-  - [Investigación con los seguidores de la serie Breaking Bad](src/data/breakingbad/README.md)
+Our project is based on _**Studio Ghibli**_, the Japanese animation studio known for its animated feature films such as **My Neighbor Totoro**, **Spirited Away**, and **Howl's Moving Castle**, among other great successes.
 
-* [Juego de Tronos](src/data/got/got.json).
-  En este set encontrarás la informacion sobre algunos de los personajes de la serie GOT.
-  - [Investigación con los seguidores de la serie GOT](src/data/got/README.md)
+These animations have gained worldwide acclaim and some have received numerous nominations and awards. Within their fandom, there is a group of users who want to interact with and view information about the animations and their characters.
 
-El objetivo principal de este proyecto es que aprendas a diseñar y construir una
-interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el
-usuario necesita.
+Based on the preliminary research among our future users, we gathered information about their needs, preferences, and tastes regarding the visualization of data from _Studio Ghibli_ animations.
 
-El objetivo principal de este proyecto es que aprendas a diseñar y construir una
-interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el
-usuario necesita.
+Based on the observations of this particular group, we were able to create various user stories that allowed us to develop a guide to their preferences, tastes, and needs based on the data we collected from Studio Ghibli's productions. The results were as follows:
 
-## 3. Objetivos de aprendizaje
+-   Our users consider it important to know how many and which movies make up the _Studio Ghibli_ catalog.
+-   They also revealed that they would like to **sort** these productions alphabetically.
+-   They want to know the directors and producers of the animations and which ones they have participated in, so they require **filtering** based on these two fields.
+-   For our users, it is important to have specific relevant information such as title, release date, score, director, and producer.
+-   It is not difficult to imagine that the studio's animations captivate the audience with their diverse menu of magical and charming characters. Therefore, our users also consider it important to know which characters appear in each movie and how many there are.
+-   Characters have unique characteristics that users want to know, such as name, age, gender, species, and more.
+-   Additionally, the animations feature unique locations and vehicles in each one. For our users, it is important to know what they are and in which production they appear.
+-   As extra information, our users determined the importance of **calculating** the percentage of female and male characters (human or not) that appear in all the movies. This was added to the count of vehicles (magical or not) and their names.
 
-Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
+<a href="https://ibb.co/fk4dVXh"><img src="https://i.ibb.co/McMkygY/Figma-historias-usuarias.png" alt="Figma-historias-usuarias" border="0"></a>
 
-### HTML
+## 4. Project Organization
 
-- [ ] **Uso de HTML semántico**
+Once we defined the main needs, preferences, and tastes of our users, we decided to plan the project in sprints based on the objectives identified in our User Stories.
 
-  <details><summary>Links</summary><p>
+For this, we used [Trello](https://trello.com/b/dqORWHBB/1er-sprint-dl), where we created a dashboard for each sprint. Initially, we only created the first one, and the other three were the result of tasks we completed or carried over from the previous sprint.
 
-  * [HTML semántico](https://curriculum.laboratoria.la/es/topics/html/02-html5/02-semantic-html)
-  * [Semantics - MDN Web Docs Glossary](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
-</p></details>
+**1st Sprint**
+<a href="https://ibb.co/HxLkvhC"><img src="https://i.ibb.co/xfKRvFY/Trello-1er-sprint.png" alt="Trello-1er-sprint" border="0"></a>
 
-### CSS
+**2nd Sprint** 
+<a href="https://ibb.co/kxb6j45"><img src="https://i.ibb.co/HVwp6tB/Trello-2do-sprint.png" alt="Trello-2do-sprint" border="0"></a>
 
-- [ ] **Uso de selectores de CSS**
+**3rd Sprint** 
+<a href="https://ibb.co/7WkwqTF"><img src="https://i.ibb.co/cFYGjpd/Trello-3er-sprint.png" alt="Trello-3er-sprint" border="0"></a>
 
-  <details><summary>Links</summary><p>
+**4th Sprint** 
+<a href="https://ibb.co/XjSwVLv"><img src="https://i.ibb.co/Dz5qLWS/Trello-4to-sprint.png" alt="Trello-4to-sprint" border="0"></a>
 
-  * [Intro a CSS](https://curriculum.laboratoria.la/es/topics/css/01-css/01-intro-css)
-  * [CSS Selectors - MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
-</p></details>
+Based on the objectives of the first sprint, we decided to continue with the creation of the Low-Fidelity and High-Fidelity prototypes. When planning and taking into account the user stories (filtering, sorting, and data calculation), we decided to approach the project in stages. The first phase was to visualize the basic data of the animations: poster and title.
 
-- [ ] **Modelo de caja (box model): borde, margen, padding**
+In this initial phase, we included a select for the **filtering** by director and producer, as well as buttons that implemented the **sorting** function to alphabetically order the movies in the catalog.
 
-  <details><summary>Links</summary><p>
+The second part focused on creating a modal box that displayed the rest of the movie data: description, director, producer, score, release year, characters (name, age, gender, eye color, hair color, and species), locations (name, climate, terrain, and surface water), and vehicles (name, description, vehicle class, length, and pilot) along with their respective images.
 
-  * [Box Model & Display](https://curriculum.laboratoria.la/es/topics/css/01-css/02-boxmodel-and-display)
-  * [The box model - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
-  * [Introduction to the CSS box model - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
-  * [CSS display - MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/display)
-  * [display - CSS Tricks](https://css-tricks.com/almanac/properties/d/display/)
-</p></details>
+As we worked on the project, we realized the need to create a modal to display the results of the **calculation** and **count** functions. This feature does not appear in our High-Fidelity prototype.
 
-- [ ] **Uso de flexbox en CSS**
+## 5. User Interface Design
 
-  <details><summary>Links</summary><p>
+**5.1 Low-Fidelity Prototype**
 
-  * [A Complete Guide to Flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-  * [Flexbox Froggy](https://flexboxfroggy.com/#es)
-  * [Flexbox - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
-</p></details>
+For its creation, we used [Figma](https://www.figma.com/file/5Jo5rlzB1Hdx7YJhgnZlWn/Studio-Ghibli-Historias-de-usuarias/Prototipo-baja-fidelidad?type=whiteboard&t=kpnAlzyHyNU8Twpa-0). This low-fidelity prototype consists of an interface that displays movies with basic data (animation poster, title, year, duration), a section that, when clicking on the poster, displays specific data about the productions, such as characters, locations, and vehicles that appear in the movies. There is also a carousel of images and another section (roulette) that will help users choose which movie to watch.
+<a href="https://ibb.co/dWVL36X"><img src="https://i.ibb.co/QbTCqnh/Figma-baja-fidelidad.png" alt="Figma-baja-fidelidad" border="0"></a>
 
-### Web APIs
+**5.2 High-Fidelity Prototype**
 
-- [ ] **Uso de selectores del DOM**
+Regarding our [high-fidelity prototype](https://scene.zeplin.io/project/64f608cdc99f9224968fed7f), it is presented with the color palette designated in a circular gradient (based on the animations of **Princess Mononoke** and **Spirited Away**), the possible poster sizes, and part of the data that will appear beneath them. Please note that upon importing the data, we realized it included other elements that we did not take into account.
+<a href="https://ibb.co/3WW4nHW"><img src="https://i.ibb.co/nff6FSf/Figma-alta-fidelidad-1.png" alt="Figma-alta-fidelidad-1" border="0"></a>
 
-  <details><summary>Links</summary><p>
+<a href="https://ibb.co/nLM4yDs"><img src="https://i.ibb.co/5RhC35W/Figma-alta-fidelidad-2.png" alt="Figma-alta-fidelidad-2" border="0"></a>
 
-  * [Manipulación del DOM](https://curriculum.laboratoria.la/es/topics/browser/02-dom/03-1-dom-methods-selection)
-  * [Introducción al DOM - MDN](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model/Introduction)
-  * [Localizando elementos DOM usando selectores - MDN](https://developer.mozilla.org/es/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)
-</p></details>
+The second section shows the modal box that would be built with the extra data from the animations. In the following video, we demonstrate the simplicity with which we allow users to interact to obtain the information they need.
+<div>
+    <a href="https://www.loom.com/share/6c1bad4f89fd435aba2de4bb903bf31c">
+      <p>Studio Ghibli web video</p>
+    </a>
+    <a href="https://www.loom.com/share/6c1bad4f89fd435aba2de4bb903bf31c">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/6c1bad4f89fd435aba2de4bb903bf31c-1693927929842-with-play.gif">
+    </a>
+  </div>
 
-- [ ] **Manejo de eventos del DOM (listeners, propagación, delegación)**
+We want to emphasize that our interface is also [responsive](%28https://www.webmobilefirst.com/en/screencasts/sBWtdk_178/%29), seamlessly adapting to devices with different screen sizes, including mobiles, tablets, and desktops.
 
-  <details><summary>Links</summary><p>
+## 6. Code
 
-  * [Introducción a eventos - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Events)
-  * [EventTarget.addEventListener() - MDN](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)
-  * [EventTarget.removeEventListener() - MDN](https://developer.mozilla.org/es/docs/Web/API/EventTarget/removeEventListener)
-  * [El objeto Event](https://developer.mozilla.org/es/docs/Web/API/Event)
-</p></details>
+As mentioned, the interface allows users to analyze movies from three perspectives that users have commented are the most important to them: filtering, sorting, and calculation. For this purpose, three functions were created to meet these expectations:
 
-- [ ] **Manipulación dinámica del DOM**
+-   **Filtering** (`function filterDirector and function filterProducer`): Movies can be filtered by Director or Producer.
+-   **Sorting** (`function extractTitle`): Movie titles can be sorted from A-Z and in reverse order.
+-   **Calculation** (`function computeFemaleCharacterPercentage and function computeMaleCharacterPercentage`): It displays the percentages of female and male characters that appear in the productions.
 
-  <details><summary>Links</summary><p>
+As an added feature, the **Count** function (`function computeVehicle`) was included, which provides extra information about the number of vehicles (magical or not) that appear in the _Ghibli_ universe.
 
-  * [Introducción al DOM](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model/Introduction)
-  * [Node.appendChild() - MDN](https://developer.mozilla.org/es/docs/Web/API/Node/appendChild)
-  * [Document.createElement() - MDN](https://developer.mozilla.org/es/docs/Web/API/Document/createElement)
-  * [Document.createTextNode()](https://developer.mozilla.org/es/docs/Web/API/Document/createTextNode)
-  * [Element.innerHTML - MDN](https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML)
-  * [Node.textContent - MDN](https://developer.mozilla.org/es/docs/Web/API/Node/textContent)
-</p></details>
+For the first function, two `select` elements were used, displaying the directors and producers of all movies that can be selected by users to filter movies based on these criteria.
 
-### JavaScript
+The `buttons` referenced as Aa-Zz and Zz-Aa are used to sort the animations in alphabetical order, while the "Click me!" `button` allows users to view the results of our last two functions in a modal.
 
-- [ ] **Diferenciar entre tipos de datos primitivos y no primitivos**
+Inside a `display: grid`, movies were added with their respective general data. Clicking on each one opens another modal, which contains two columns displaying specific data.
 
-- [ ] **Arrays (arreglos)**
+Below are various images of our code:
+**HTML**
+<a href="https://ibb.co/SnV8M7W"><img src="https://i.ibb.co/hW2j41h/Html-select-director.png" alt="Html-select-director" border="0"></a>**
 
-  <details><summary>Links</summary><p>
+**Data.JS**
+<a href="https://ibb.co/rxCGxzF"><img src="https://i.ibb.co/F5Sb5ym/Data-js-funciones.png" alt="Data-js-funciones" border="0"></a>
 
-  * [Arreglos](https://curriculum.laboratoria.la/es/topics/javascript/04-arrays)
-  * [Array - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/)
-  * [Array.prototype.sort() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-  * [Array.prototype.forEach() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-  * [Array.prototype.map() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-  * [Array.prototype.filter() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-  * [Array.prototype.reduce() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-</p></details>
+**Main.JS**
+<a href="https://ibb.co/qJbQqFw"><img src="https://i.ibb.co/TWz3jq5/Main-js.png" alt="Main-js" border="0"></a>
 
-- [ ] **Objetos (key, value)**
+**Data.Spec.JS**
+<a href="https://ibb.co/NTbncNS"><img src="https://i.ibb.co/hYw13df/Data-spec.png" alt="Data-spec" border="0"></a>
 
-  <details><summary>Links</summary><p>
+**CSS**
+<a href="https://ibb.co/5MH6HcF"><img src="https://i.ibb.co/Tv3k3hL/CSS-body-header.png" alt="CSS-body-header" border="0"></a>
 
-  * [Objetos en JavaScript](https://curriculum.laboratoria.la/es/topics/javascript/05-objects/01-objects)
-</p></details>
+## 6.1 Tests
 
-- [ ] **Variables (declaración, asignación, ámbito)**
+Our project also includes a set of tests (written by us) for the filtering, sorting, calculation, and counting functions. These tests helped identify some ESLint errors.
 
-  <details><summary>Links</summary><p>
+Additionally, when running these tests, we noticed a bug in one of our functions: the alphabetical sorting function was not correctly rearranging the array. However, this issue was resolved by shuffling the array in the test.
 
-  * [Valores, tipos de datos y operadores](https://curriculum.laboratoria.la/es/topics/javascript/01-basics/01-values-variables-and-types)
-  * [Variables](https://curriculum.laboratoria.la/es/topics/javascript/01-basics/02-variables)
-</p></details>
+In the following video, you can see the tests that were performed and passed with complete satisfaction:
+<div>
+    <a href="https://www.loom.com/share/60809ca49b9d49eb95fa839bfbe684b0">
+      <p>Run Test video Data Lovers-Studio Ghibli</p>
+    </a>
+    <a href="https://www.loom.com/share/60809ca49b9d49eb95fa839bfbe684b0">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/60809ca49b9d49eb95fa839bfbe684b0-with-play.gif">
+    </a>
+  </div>
 
-- [ ] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
+## 7. Technologies Used
 
-  <details><summary>Links</summary><p>
+-   HTML5: Provides the basic structure of the application.
+-   CSS3: Defines the visual design and style of the application.
+-   JavaScript: Implements the functionality to analyze the entered text and display the results.
+-   We also made use of [ImgBB](https://imgbb.com/), [Trello](https://www.trello.com/), [Loom](https://www.loom.com/), [Stackedit](https://www.stackedit.io/), [ColorSpace](https://mycolor.space/), Visual Code, and Github.
 
-  * [Estructuras condicionales y repetitivas](https://curriculum.laboratoria.la/es/topics/javascript/02-flow-control/01-conditionals-and-loops)
-  * [Tomando decisiones en tu código — condicionales - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals)
-</p></details>
-
-- [ ] **Uso de bucles/ciclos (while, for, for..of)**
-
-  <details><summary>Links</summary><p>
-
-  * [Bucles (Loops)](https://curriculum.laboratoria.la/es/topics/javascript/02-flow-control/02-loops)
-  * [Bucles e iteración - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration)
-</p></details>
-
-- [ ] **Funciones (params, args, return)**
-
-  <details><summary>Links</summary><p>
-
-  * [Funciones (control de flujo)](https://curriculum.laboratoria.la/es/topics/javascript/02-flow-control/03-functions)
-  * [Funciones clásicas](https://curriculum.laboratoria.la/es/topics/javascript/03-functions/01-classic)
-  * [Arrow Functions](https://curriculum.laboratoria.la/es/topics/javascript/03-functions/02-arrow)
-  * [Funciones — bloques de código reutilizables - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Functions)
-</p></details>
-
-- [ ] **Pruebas unitarias (unit tests)**
-
-  <details><summary>Links</summary><p>
-
-  * [Empezando con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/getting-started)
-</p></details>
-
-- [ ] **Módulos de ECMAScript (ES Modules)**
-
-  <details><summary>Links</summary><p>
-
-  * [import - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/import)
-  * [export - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/export)
-</p></details>
-
-- [ ] **Uso de linter (ESLINT)**
-
-- [ ] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
-
-- [ ] **Diferenciar entre expresiones (expressions) y sentencias (statements)**
-
-### Control de Versiones (Git y GitHub)
-
-- [ ] **Git: Instalación y configuración**
-
-- [ ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
-
-- [ ] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
-
-- [ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
-
-- [ ] **GitHub: Despliegue con GitHub Pages**
-
-  <details><summary>Links</summary><p>
-
-  * [Sitio oficial de GitHub Pages](https://pages.github.com/)
-</p></details>
-
-- [ ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
-
-### Centrado en el usuario
-
-- [ ] **Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro**
-
-### Diseño de producto
-
-- [ ] **Crear prototipos de alta fidelidad que incluyan interacciones**
-
-- [ ] **Seguir los principios básicos de diseño visual**
-
-### Investigación
-
-- [ ] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
-
-  <details><summary>Links</summary><p>
-
-  * [Intro a testeos usabilidad](https://coda.io/@bootcamp-laboratoria/contenido-ux/test-de-usabilidad-15)
-  * [Pruebas con Usuarios 1 — ¿Qué, cuándo y para qué testeamos?](https://eugeniacasabona.medium.com/pruebas-con-usuarios-1-qu%C3%A9-cu%C3%A1ndo-y-para-qu%C3%A9-testeamos-7c3a89b4b5e7)
-</p></details>
-
-## 4. Consideraciones generales
-
-* Este proyecto se debe resolver en duplas.
-* El rango de tiempo estimado para completar el proyecto es de 3 a 4 Sprints.
-* El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
-  interfaz será desplegada usando [GitHub Pages](https://pages.github.com/).
-
-## 5. Criterios de aceptación mínimos del proyecto
-
-Los criterios para considerar que has completado este proyecto son:
-
-### Definición del producto
-
-Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
-contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
-el problema (o problemas) que tiene tu usuario.
-
-### Historias de usuario
-
-Una vez que entiendas las necesidades de tus usuarios, escribe las [Historias
-de Usuario](https://es.wikipedia.org/wiki/Historias_de_usuario) que representen
-todo lo que el usuario necesita hacer/ver. Las **Historias de Usuario** deben
-ser el resultado de tu proceso de investigación o _research_ de tus usuarios.
-
-Asegúrate de incluir la definición de terminado (_definition of done_) y los
-Criterios de Aceptación para cada una.
-
-En la medida de lo posible, termina una historia de usuario antes de pasar
-a la siguiente (Cumple con Definición de Terminado + Criterios de Aceptación).
-
-### Diseño de la Interfaz de Usuario
-
-#### Prototipo de baja fidelidad
-
-Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
-solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
-iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
-`README.md`.
-
-#### Prototipo de alta fidelidad
-
-Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -
-_User Interface_). Para eso debes aprender a utilizar alguna herramienta de
-diseño visual. Nosotros te recomendamos [Figma](https://www.figma.com/) que es
-una herramienta que funciona en el navegador y, además, puedes crear una cuenta
-gratis. Sin embargo, eres libre de utilizar otros editores gráficos como
-Illustrator, Photoshop, PowerPoint, Keynote, etc.
-
-El diseño debe representar el _ideal_ de tu solución. Digamos que es lo que
-desearías implementar si tuvieras tiempo ilimitado para trabajar. Además, tu
-diseño debe seguir los fundamentos de _[visual design](https://coda.io/d/Bootcamp-UX-Contenido_dqkqk2rV9Z2/Diseno-de-interfaces_suOT7#_luWsQ)_.
-
-#### Testeos de usabilidad
-
-Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
-en base a los resultados, deberás iterar tus diseños. Cuéntanos
-qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
-mejoraste en tu propuesta final.
-
-### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
-
-Luego de diseñar tu interfaz de usuario deberás trabajar en su implementación.
-**No** es necesario que construyas la interfaz exactamente como la diseñaste.
-Tu tiempo de hacking es escaso, así que deberás priorizar
-
-Como mínimo, tu implementación debe:
-
-1. Mostrar la data en una interfaz: puede ser un card, una tabla, una lista,
-   etc.
-2. Permitir al usuario interactuar para obtener la infomación que necesita.
-3. Ser _responsive_, es decir, debe visualizarse sin problemas desde distintos
-   tamaños de pantallas: móviles, tablets y desktops.
-4. Que la interfaz siga los fundamentos de _visual design_.
-
-### Pruebas unitarias
-
-El _boilerplate_ de este proyecto no incluye Pruebas Unitarias (_tests_), así es
-que  tendrás que escribirlas tú para las funciones encargadas de  _procesar_,
-_filtrar_ y _ordenar_ la data, así como _calcular_ estadísticas.
-
-Tus _pruebas unitarias_ deben dar una cobertura del 70% de _statements_
-(_sentencias_), _functions_ (_funciones_), _lines_ (_líneas_), y _branches_
-(_ramas_) del archivo `src/data.js` que contenga tus funciones y está detallado
-en la sección de [Consideraciones técnicas](#srcdatajs).
-
-## 6. Hacker edition
-
-Las secciones llamadas _Hacker Edition_ son **opcionales**. Si **terminaste**
-con todo lo anterior y te queda tiempo, intenta completarlas. Así podrás
-profundizar y/o ejercitar más sobre los objetivos de aprendizaje del proyecto.
-
-Features/características extra sugeridas:
-
-* En lugar de consumir la data estática brindada en este repositorio, puedes
-  consumir la data de forma dinámica, cargando un archivo JSON por medio de
-  `fetch`. La carpeta `src/data` contiene una versión `.js` y una `.json` de
-  de cada set datos.
-* Agregarle a tu interfaz de usuario implementada visualizaciones gráficas. Para
-  ello te recomendamos explorar librerías de gráficas como
-  [Chart.js](https://www.chartjs.org/)
-  o [Google Charts](https://developers.google.com/chart/).
-* 100% Coverage
-
-## 7. Consideraciones técnicas
-
-La lógica del proyecto debe estar implementada completamente en JavaScript
-(ES6), HTML y CSS. En este proyecto NO está permitido usar librerías o
-frameworks, solo [vanilla JavaScript](https://medium.com/laboratoria-how-to/vanillajs-vs-jquery-31e623bbd46e),
-con la excepción de librerías para hacer gráficas (charts); ver
-[_Parte opcional_](#6-hacker-edition) más arriba.
-
-El _boilerplate_ contiene una estructura de archivos como punto de partida así
-como toda la configuración de dependencias:
-
-```text
-.
-├── EXTRA.md
-├── README.md
-├── package.json
-├── src
-|  ├── data (según con qué data trabajes)
-|  |  ├── lol
-|  |  |  ├── lol.js
-|  |  |  ├── lol.json
-|  |  |  └── README.md
-|  |  ├── pokemon
-|  |  |  ├── pokemon.js
-|  |  |  ├── pokemon.json
-|  |  |  └── README.md
-|  |  └── rickandmorty
-|  |  |  ├── rickandmorty.js
-|  |  |  ├── rickandmorty.json
-|  |  |  └── README.md
-|  |  └── athletes
-|  |  |  ├── athletes.js
-|  |  |  ├── athletes.json
-|  |  |  └── README.md
-|  |  └── ghibli
-|  |  |  ├── ghibli.js
-|  |  |  ├── ghibli.json
-|  |  |  └── README.md
-|  ├── data.js
-|  ├── index.html
-|  ├── main.js
-|  └── style.css
-└── test
-   └── data.spec.js
-
-directory: 7 file: 20
-```
-
-### `src/index.html`
-
-Como en el proyecto anterior, existe un archivo `index.html`. Como ya sabes,
-acá va la página que se mostrará al usuario. También nos sirve para indicar
-qué scripts se usarán y unir todo lo que hemos hecho.
-
-### `src/main.js`
-
-Recomendamos usar `src/main.js` para todo tu código que tenga que ver con
-mostrar los datos en la pantalla. Con esto nos referimos básicamente a la
-interacción con el DOM. Operaciones como creación de nodos, registro de
-manejadores de eventos (_event listeners_ o _event handlers_), ....
-
-Esta no es la única forma de dividir tu código, puedes usar más archivos y
-carpetas, siempre y cuando la estructura sea clara para tus compañeras.
-
-En este archivo encontrarás una serie de _imports_ _comentados_. Para _cargar_
-las diferentes fuentes de datos tendrás que _descomentar_ la línea
-correspondiente.
-
-Por ejemplo, si "descomentamos" la siguiente línea:
-
-```js
-// import data from './data/lol/lol.js';
-```
-
-La línea quedaría así:
-
-```js
-import data from './data/lol/lol.js';
-```
-
-Y ahora tendríamos la variable `data` disponible en el script `src/main.js`.
-
-### `src/data.js`
-
-El corazón de este proyecto es la manipulación de datos a través de arreglos
-y objetos.
-
-Te recomendamos que este archivo contenga toda la funcionalidad que corresponda
-a obtener, procesar y manipular datos (tus funciones). Por ejemplo:
-
-* `filterData(data, condition)`: esta función `filter` o filtrar recibiría la
-  data, y nos retornaría aquellos datos que sí cumplan con la condición.
-
-* `sortData(data, sortBy, sortOrder)`: esta función `sort` u ordenar
-  recibe tres parámetros.
-  El primer parámetro, `data`, nos entrega los datos.
-  El segundo parámetro, `sortBy`, nos dice con respecto a cuál de los campos de
-  la data se quiere ordenar.
-  El tercer parámetro, `sortOrder`, indica si se quiere ordenar de manera
-  ascendente o descendente.
-
-* `computeStats(data)`: la función `compute` o calcular, nos permitirá hacer
-  cálculos estadísticos básicos para ser mostrados de acuerdo a la data
-  proporcionada.
-
-Estos nombres de funciones y de parámetros son solamente referenciales, lo que
-decidas depende de tu propia implementación.
-
-Estas funciones deben ser [_puras_](https://medium.com/laboratoria-developers/introducci%C3%B3n-a-la-programaci%C3%B3n-funcional-en-javascript-parte-2-funciones-puras-b99e08c2895d)
-e independientes del DOM. Estas funciones serán después usadas desde el archivo
-`src/main.js`, al cargar la página, y cada vez que el usuario interactúe (click,
-filtrado, ordenado, ...).
-
-### `src/data`
-
-En esta carpeta están los datos de las diferentes fuentes. Encontrarás una
-carpeta por cada fuente, y dentro de cada carpeta dos archivos: uno con la
-extensión `.js` y otro `.json`. Ambos archivos contienen la misma data; la
-diferencia es que el `.js` lo usaremos a través de una etiqueta `<script>`,
-mientras que el `.json` está ahí para opcionalmente cargar la data de forma
-asíncrona con [`fetch()`](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
-(ver sección de [_Parte Opcional_](#6-hacker-edition)).
-
-### `test/data.spec.js`
-
-Tendrás también que completar las pruebas unitarias de las funciones
-implementadas en el archivo `data.js`.
-
-## 8. Pistas, tips y lecturas complementarias
-
-### Primeros pasos
-
-Súmate al canal de Slack
-[#project-data-lovers](https://claseslaboratoria.slack.com/archives/C03MV35EP5M)
-para conversar y pedir ayuda del proyecto.
-
-Antes de empezar a escribir código, debes definir qué deberá hacer el producto
-en base al conocimiento que puedas obtener de tu usuario. Estas preguntas te
-pueden ayudar:
-
-* ¿Quiénes son los principales usuarios de producto?
-* ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
-* ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?
-* ¿Cuándo utilizan o utilizarían el producto?
-* Toda tu investigación previa debe tener como resultado todas las Historias
-  de Usuario de tu proyecto.
-* No hagas los prototipos de alta fidelidad de todas tus Historias. Comienza
-  solamente por los que se necesiten para tu Sprint 1 (semana 1 de trabajo). Más
-  pistas en la guía de organización para el proyecto.
-
-Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
-
-1. Una de las integrantes del equipo debe realizar un :fork_and_knife:
-   [fork](https://help.github.com/articles/fork-a-repo/) del repo de tu cohort,
-   tus _coaches_ te compartirán un _link_ a un repo y te darán acceso de lectura
-   en ese repo. La otra integrante del equipo deber hacer un fork **del
-   repositorio de su compañera** y
-   [configurar](https://gist.github.com/BCasal/026e4c7f5c71418485c1) un `remote`
-   hacia el mismo.
-2. :arrow_down: [Clona](https://help.github.com/articles/cloning-a-repository/)
-   tu _fork_ a tu computadora (copia local).
-3. 📦 Instala las dependencias del proyecto con el comando `npm install`. Esto
-   asume que has instalado [Node.js](https://nodejs.org/) (que incluye [npm](https://docs.npmjs.com/)).
-4. Si todo ha ido bien, deberías poder ejecutar las :traffic_light:
-   pruebas unitarias (unit tests) con el comando `npm test`.
-5. Para ver la interfaz de tu programa en el navegador, usa el comando
-  `npm start` para arrancar el servidor web y dirígete a
-  `http://localhost:5000` en tu navegador.
-6. A codear se ha dicho! :rocket:
-
-### Contenido de referencia
-
-#### Diseño de experiencia de usuario (User Experience Design)
-
-* Investigación con usuarios / entrevistas
-* Principios de diseño visual
-
-#### Desarrollo Front-end
-
-* Unidad de testing en curso de JavaScript en LMS.
-* Unidad de arreglos en curso de JavaScript en LMS.
-* Unidad de objetos en curso de JavaScript en LMS.
-* Unidad de funciones en curso de JavaScript en LMS.
-* Unidad de DOM en curso de Browser JavaScript en LMS.
-* [Array en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array)
-* [Array.sort en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/sort)
-* [Array.map en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/map)
-* [Array.filter en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/filter)
-* [Array.reduce en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce)
-* [Array.forEach en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/forEach)
-* [Object.keys en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/keys)
-* [Object.entries en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/entries)
-* [Fetch API en MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-* [json.org](https://json.org/json-es.html)
-* [expressions-vs-statements](https://2ality.com/2012/09/expressions-vs-statements.html)
-* [expresión vs sentencia](https://openclassrooms.com/en/courses/4309531-descubre-las-funciones-en-javascript/5108986-diferencia-entre-expresion-y-sentencia)
-* [datos atómicos vs datos estructurados](https://www.todojs.com/tipos-datos-javascript-es6/)
-* [Modulos: Export](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/export)
-* [Modulos: Import](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/import)
-
-#### Herramientas
-
-* [Git](https://git-scm.com/)
-* [GitHub](https://github.com/)
-* [GitHub Pages](https://pages.github.com/)
-* [Node.js](https://nodejs.org/)
-* [Jest](https://jestjs.io/)
-
-#### Organización del Trabajo
-
-* [Historias de Usuario](https://www.youtube.com/watch?v=ky6wFiF5vMk&t=344s).
-  Ojo que Cris no diferencia _Definición de terminado_ de _Criterios de
-  Aceptación_ y nosotros sí lo haremos. Más detalles en la guía.
-* [Cómo dividir H.U.](https://www.youtube.com/watch?v=Ueq786iZ30I&t=341s)
-* [Guía para Data Lovers](https://docs.google.com/presentation/d/e/2PACX-1vQhx9D36NjpH-Daea-ITPUDUzNL8ZiNAprq_7b5PSUrfutk45tEtaOLz2lmd8f54_5jX1hypDM8f8SM/pub?start=false&loop=false&delayms=60000)
-
-## 9. Checklist
-
-* [ ] Usa VanillaJS.
-* [ ] Pasa linter (`npm run pretest`)
-* [ ] Pasa tests (`npm test`)
-* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
-  lines y branches.
-* [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-* [ ] Incluye historias de usuario en `README.md`.
-* [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
-  `README.md`.
-* [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
-  en `README.md`.
-* [ ] Incluye link a Zeplin en `README.md`.
-* [ ] Incluye el listado de problemas que detectaste a través de tests de
-  usabilidad en el `README.md`.
-* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
-* [ ] UI: Es _responsive_.
+## 8. Useful Resources
+[How to divide user stories into tasks](https://www.youtube.com/watch?v=Ueq786iZ30I&t=341s&ab_channel=%C3%81gilEs-PorCrisR%C3%BAa) 
+[Pruebas/Testing en JavaScript](https://www.youtube.com/playlist?list=PLiAEe0-R7u8kqvibxkK9tqqoJXnhgtefg),
+[Flujo de trabajo de ramas de función en Github](https://www.atlassian.com/es/git/tutorials/comparing-workflows/feature-branch-workflow)
+[Build a responsive modal using CSS](https://dev.to/ananiket/build-a-responsive-modal-using-css-1h5k)
+[Responsive layouts using CSS grid](https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/)
