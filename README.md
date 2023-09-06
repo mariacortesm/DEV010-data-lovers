@@ -124,7 +124,7 @@ The second section shows the modal box that would be built with the extra data f
     </a>
   </div>
 
-We want to emphasize that our interface is also [responsive](%28https://www.webmobilefirst.com/en/screencasts/sBWtdk_178/%29), seamlessly adapting to devices with different screen sizes, including mobiles, tablets, and desktops.
+We want to emphasize that our interface is also [responsive](https://www.webmobilefirst.com/en/screencasts/sBWtdk_178/), seamlessly adapting to devices with different screen sizes, including mobiles, tablets, and desktops.
 
 ## 6. Code
 
